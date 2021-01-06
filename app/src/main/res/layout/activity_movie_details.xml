@@ -18,24 +18,119 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--BG image-->
     <ImageView
         android:id="@+id/BG"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/BGbackground"
-        app:layout_constraintTop_toBottomOf="@id/orig_GL"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/orig_GL" />
+
+    <!--AVENGERS-->
+    <TextView
+        android:id="@+id/avengers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:text="Avengers:
+         End Game"
+        android:textColor="#ECECEC"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orig_GL" />
+
+    <!--GENRE-->
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Action, Adventure, Fantasy"
+        android:textColor="#FF3466"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="g_GL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avengers" />
 
 
-    <!--Guidline for orig-->
+    <!--STARS-->
+    <ImageView
+        android:id="@+id/s1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:src="@drawable/IconredStar"
+        app:layout_constraintBottom_toTopOf="@id/star_GL"
+        app:layout_constraintEnd_toStartOf="s2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/s2"
+        android:paddingTop="5dp"
+        android:src="@drawable/IconredStar"
+        app:layout_constraintBottom_toTopOf="@id/star_GL"
+        app:layout_constraintEnd_toStartOf="s3"
+        app:layout_constraintStart_toEndOf="s1" />
+
+    <ImageView
+        android:id="@+id/s3"
+        android:paddingTop="5dp"
+        android:src="@drawable/IconredStar"
+        app:layout_constraintBottom_toTopOf="@id/star_GL"
+        app:layout_constraintEnd_toStartOf="s4"
+        app:layout_constraintStart_toEndOf="s2" />
+
+
+    <ImageView
+        android:id="@+id/s4"
+        android:paddingTop="5dp"
+        android:src="@drawable/IconredStar"
+        app:layout_constraintBottom_toTopOf="@id/star_GL"
+        app:layout_constraintEnd_toStartOf="s5"
+        app:layout_constraintStart_toEndOf="s3" />
+
+    <ImageView
+        android:id="@+id/s5"
+        android:paddingTop="5dp"
+        android:src="@drawable/grayStar"
+        app:layout_constraintBottom_toTopOf="@id/star_GL"
+        app:layout_constraintEnd_toEndOf="VGL"
+        app:layout_constraintStart_toEndOf="@id/s4" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/orig_GL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_GL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/star_GL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="299dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
