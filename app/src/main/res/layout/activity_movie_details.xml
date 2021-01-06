@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".MovieDetailsActivity">
 
+    <!--ORIG image (UPPER)-->
+    <ImageView
+        android:id="@+id/orig"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/orig"
+        app:layout_constraintBottom_toTopOf="@id/orig_GL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/BG"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/BGbackground"
+        app:layout_constraintTop_toBottomOf="@id/orig_GL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <!--Guidline for orig-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/orig_GL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
