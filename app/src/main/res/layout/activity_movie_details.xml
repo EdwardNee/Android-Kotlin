@@ -45,6 +45,7 @@
         android:gravity="center_vertical"
         android:lineHeight="40dp"
         android:minLines="2"
+        android:singleLine="false"
         android:text="Avengers: End Game"
         android:textColor="#ECECEC"
         android:textSize="40sp"
@@ -175,11 +176,11 @@
         android:id="@+id/descr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:alpha="0.75"
-        android:breakStrategy="balanced"
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
-        android:padding="16dp"
         android:text="After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
         android:textColor="#FFFFFF"
         android:textSize="14sp"
@@ -208,8 +209,8 @@
 
     <ImageView
         android:id="@+id/RDowney"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/RDJr"
         app:layout_constraintEnd_toStartOf="@id/CEvans"
@@ -218,8 +219,8 @@
 
     <ImageView
         android:id="@+id/CEvans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/MovieCEvans"
         app:layout_constraintEnd_toStartOf="@id/MRuffalo"
@@ -228,8 +229,8 @@
 
     <ImageView
         android:id="@+id/MRuffalo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/MarkRufallo"
         app:layout_constraintEnd_toStartOf="@id/CHemisworth"
@@ -240,7 +241,6 @@
         android:id="@+id/CHemisworth"
         android:layout_width="80dp"
         android:layout_height="80dp"
-
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/CHemsworth"
@@ -252,19 +252,67 @@
     <!--CAST NAME-->
     <TextView
         android:id="@+id/RDowney_text"
-
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:breakStrategy="balanced"
-
         android:gravity="center_vertical"
         android:text="Robert Downey Jr."
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/CEvans_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RDowney" />
+
+    <TextView
+        android:id="@+id/CEvans_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:breakStrategy="balanced"
+        android:gravity="center_vertical"
+        android:text="Chris Evans"
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/MRuffalo_text"
+        app:layout_constraintStart_toEndOf="@id/RDowney_text"
+        app:layout_constraintTop_toBottomOf="@id/CEvans" />
+
+    <TextView
+        android:id="@+id/CHemisworth_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:breakStrategy="balanced"
+        android:gravity="center_vertical"
+        android:text="Chris Hemsworth"
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/MRuffalo_text"
+        app:layout_constraintTop_toBottomOf="@id/CHemisworth" />
+
+    <TextView
+        android:id="@+id/MRuffalo_text"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:breakStrategy="balanced"
+        android:gravity="center_vertical"
+        android:text="Mark Ruffalo"
+        android:textColor="#D8D8D8"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/CEvans_text"
+        app:layout_constraintTop_toBottomOf="@id/MRuffalo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/orig_GL"
