@@ -206,7 +206,7 @@
     <!--CAST NAME-->
     <TextView
         android:id="@+id/RDowney_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
@@ -223,7 +223,7 @@
 
     <TextView
         android:id="@+id/CEvans_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:breakStrategy="balanced"
@@ -238,7 +238,7 @@
 
     <TextView
         android:id="@+id/MRuffalo_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:breakStrategy="balanced"
@@ -254,7 +254,7 @@
 
     <TextView
         android:id="@+id/CHemisworth_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
@@ -267,6 +267,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_text"
         app:layout_constraintTop_toBottomOf="@id/cast" />
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintHeight_default="spread"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="52dp"
+
+        android:src="@drawable/CHemsworth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/orig_GL"
