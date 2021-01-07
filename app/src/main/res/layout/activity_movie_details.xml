@@ -21,7 +21,6 @@
     <!--BG image-->
 
     <!--AVENGERS-->
-
     <ImageView
         android:id="@+id/BG"
         android:layout_width="match_parent"
@@ -203,50 +202,6 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/descr" />
-
-    <!--CAST IMG-->
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/RDowney"-->
-    <!--        android:layout_width="80dp"-->
-    <!--        android:layout_height="80dp"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:src="@drawable/RDJr"-->
-    <!--        app:layout_constraintEnd_toStartOf="@id/CEvans"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/cast" />-->
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/CEvans"-->
-    <!--        android:layout_width="80dp"-->
-    <!--        android:layout_height="80dp"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:src="@drawable/MovieCEvans"-->
-    <!--        app:layout_constraintEnd_toStartOf="@id/MRuffalo"-->
-    <!--        app:layout_constraintStart_toEndOf="@id/RDowney"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/cast" />-->
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/MRuffalo"-->
-    <!--        android:layout_width="80dp"-->
-    <!--        android:layout_height="80dp"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:src="@drawable/MarkRufallo"-->
-    <!--        app:layout_constraintEnd_toStartOf="@id/CHemisworth"-->
-    <!--        app:layout_constraintStart_toEndOf="@id/CEvans"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/cast" />-->
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/CHemisworth"-->
-    <!--        android:layout_width="80dp"-->
-    <!--        android:layout_height="80dp"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:src="@drawable/CHemsworth"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toEndOf="@id/MRuffalo"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/cast" />-->
-
 
     <!--CAST NAME-->
     <TextView
