@@ -173,7 +173,6 @@
 
     <TextView
         android:id="@+id/descr"
-        android:paddingTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -181,6 +180,7 @@
         android:alpha="0.75"
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
+        android:paddingTop="10dp"
         android:text="After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
         android:textColor="#FFFFFF"
         android:textSize="14sp"
@@ -206,35 +206,40 @@
 
 
     <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/RDJr"
-        />    <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/RDJr"
-        />    <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/RDJr"
-        />
-
-    <ImageView
+        android:id="@+id/RDowney_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/CEvans_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/RDJr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/RDowney_img" />
+
+    <ImageView
+        android:id="@+id/MRuffalo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/RDJr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/CEvans_img" />
+
+    <ImageView
+        android:id="@+id/CHemisworth_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/RDJr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/MRuffalo_img" />
 
     <!--CAST NAME-->
     <TextView
