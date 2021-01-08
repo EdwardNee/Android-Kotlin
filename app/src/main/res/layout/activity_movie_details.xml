@@ -208,9 +208,10 @@
 
     <ImageView
         android:id="@+id/RDowney_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/CEvans_img"
@@ -218,9 +219,10 @@
 
     <ImageView
         android:id="@+id/CEvans_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerInside"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintWidth_percent="0.25"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"
@@ -228,9 +230,10 @@
 
     <ImageView
         android:id="@+id/MRuffalo_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerInside"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintWidth_percent="0.25"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"
@@ -238,9 +241,10 @@
 
     <ImageView
         android:id="@+id/CHemisworth_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerInside"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintWidth_percent="0.25"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
