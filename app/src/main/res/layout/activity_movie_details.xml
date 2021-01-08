@@ -206,54 +206,54 @@
         app:layout_constraintTop_toBottomOf="@id/descr" />
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/RDowney_img"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:src="@drawable/RDJr"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/CEvans_img"-->
-<!--        app:layout_constraintHeight_percent="0.25"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintWidth_percent="0.25" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/RDowney_img"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:src="@drawable/RDJr"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/CEvans_img"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/CEvans_img"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:src="@drawable/RDJr"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"-->
-<!--        app:layout_constraintHeight_percent="0.25"-->
-<!--        app:layout_constraintStart_toEndOf="@id/RDowney_img"-->
-<!--        app:layout_constraintWidth_percent="0.25" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/CEvans_img"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:src="@drawable/RDJr"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/RDowney_img"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/MRuffalo_img"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:src="@drawable/RDJr"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"-->
-<!--        app:layout_constraintHeight_percent="0.25"-->
-<!--        app:layout_constraintStart_toEndOf="@id/CEvans_img"-->
-<!--        app:layout_constraintWidth_percent="0.25" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/MRuffalo_img"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:src="@drawable/RDJr"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/CEvans_img"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/CHemisworth_img"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:src="@drawable/RDJr"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHeight_percent="0.25"-->
-<!--        app:layout_constraintStart_toEndOf="@id/MRuffalo_img"-->
-<!--        app:layout_constraintWidth_percent="0.25" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/CHemisworth_img"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:src="@drawable/RDJr"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/MRuffalo_img"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
     <!--CAST NAME-->
     <TextView
@@ -262,52 +262,52 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:drawableTop="@drawable/RDJr"
         android:breakStrategy="balanced"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintWidth_percent="0.25"
+        android:drawableTop="@drawable/RDJr"
         android:gravity="center_vertical"
         android:text="Robert Downey Jr."
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/CEvans_text"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cast" />
+        app:layout_constraintTop_toBottomOf="@id/cast"
+        app:layout_constraintWidth_percent="0.25" />
 
     <TextView
         android:id="@+id/CEvans_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
-        android:drawableTop="@drawable/RDJr"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintWidth_percent="0.25"
         android:breakStrategy="balanced"
+        android:drawableTop="@drawable/RDJr"
         android:text="Chris Evans"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/MRuffalo_text"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/RDowney_text"
-        app:layout_constraintTop_toBottomOf="@id/cast" />
+        app:layout_constraintTop_toBottomOf="@id/cast"
+        app:layout_constraintWidth_percent="0.25" />
 
     <TextView
         android:id="@+id/MRuffalo_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintWidth_percent="0.25"
         android:breakStrategy="balanced"
+        android:drawableTop="@drawable/RDJr"
         android:text="Mark Ruffalo"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
-        android:drawableTop="@drawable/RDJr"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/CHemisworth_text"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/CEvans_text"
-        app:layout_constraintTop_toBottomOf="@id/cast" />
+        app:layout_constraintTop_toBottomOf="@id/cast"
+        app:layout_constraintWidth_percent="0.25" />
 
 
     <TextView
@@ -315,18 +315,18 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintWidth_percent="0.25"
         android:layout_marginEnd="16dp"
-        android:drawableTop="@drawable/RDJr"
         android:breakStrategy="balanced"
+        android:drawableTop="@drawable/RDJr"
         android:text="Chris Hemsasdasdworth"
         android:textColor="#D8D8D8"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_text"
-        app:layout_constraintTop_toBottomOf="@id/cast" />
+        app:layout_constraintTop_toBottomOf="@id/cast"
+        app:layout_constraintWidth_percent="0.25" />
 
 
     <androidx.constraintlayout.widget.Guideline
