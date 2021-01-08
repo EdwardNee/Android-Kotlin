@@ -37,7 +37,6 @@
     <TextView
         android:id="@+id/avengers"
         android:layout_width="0dp"
-        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -49,6 +48,7 @@
         android:text="Avengers: End Game"
         android:textColor="#ECECEC"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/orig_GL" />
 
@@ -212,8 +212,8 @@
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:src="@drawable/RDJr"
-        app:layout_constraintEnd_toStartOf="@id/CEvans_img"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/CEvans_img"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -221,9 +221,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"
         android:src="@drawable/RDJr"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"
         app:layout_constraintStart_toEndOf="@id/RDowney_img" />
 
     <ImageView
@@ -232,8 +232,8 @@
         android:layout_height="wrap_content"
         android:scaleType="centerInside"
         android:src="@drawable/RDJr"
-        app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"
         app:layout_constraintStart_toEndOf="@id/CEvans_img" />
 
     <ImageView
@@ -242,8 +242,8 @@
         android:layout_height="wrap_content"
         android:scaleType="centerInside"
         android:src="@drawable/RDJr"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_img" />
 
     <!--CAST NAME-->
