@@ -210,13 +210,12 @@
         android:id="@+id/RDowney_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
         android:scaleType="fitCenter"
         android:src="@drawable/RDJr"
         app:layout_constraintEnd_toStartOf="@id/CEvans_img"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/root_left_VGL"
         app:layout_constraintTop_toTopOf="@id/cast"
         app:layout_constraintWidth_percent="0.25" />
 
@@ -248,10 +247,9 @@
         android:id="@+id/CHemisworth_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
         android:scaleType="fitCenter"
         android:src="@drawable/CHemsworth"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_img"
         app:layout_constraintTop_toTopOf="@id/cast"
@@ -353,4 +351,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.275" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/root_left_VGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/root_right_VGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
