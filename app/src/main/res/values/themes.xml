@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="MyRatingBar" parent="Theme.AppCompat">
-        <item name="colorControlNormal">@android:color/holo_green_light</item>
-        <item name="colorControlActivated">@android:color/holo_orange_dark</item>
+        <item name="colorControlNormal">@color/starActivated</item>
+        <item name="colorControlActivated">@color/starBG</item>
     </style>
 </resources>
