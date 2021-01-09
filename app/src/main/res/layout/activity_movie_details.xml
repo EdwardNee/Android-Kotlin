@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MovieDetailsActivity">
 
-<!--BACK BTTN-->
+    <!--BACK BTTN-->
 
     <!--ORIG image (UPPER)-->
     <ImageView
@@ -19,18 +19,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Back"
         android:layout_marginTop="56dp"
-        android:drawablePadding="8dp"
-        android:textSize="12sp"
-        android:textColor="@color/white"
         android:drawableLeft="@drawable/Pathback"
-        />
+        android:drawablePadding="8dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--BG image-->
     <ImageView
@@ -195,6 +195,7 @@
         android:layout_height="wrap_content"
         android:alpha="0.75"
         android:gravity="center_vertical"
+        android:letterSpacing="0.04"
         android:lineSpacingExtra="4sp"
         android:paddingTop="10dp"
         android:text="After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
@@ -225,38 +226,37 @@
         android:id="@+id/RDowney_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitCenter"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/RDJr"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/CEvans_img"
-        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toTopOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+        app:layout_constraintTop_toTopOf="@id/cast" />
 
     <ImageView
         android:id="@+id/CEvans_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/MovieCEvans"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/MRuffalo_img"
-        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/RDowney_img"
-        app:layout_constraintTop_toTopOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+        app:layout_constraintTop_toTopOf="@id/cast" />
 
     <ImageView
         android:id="@+id/MRuffalo_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/MarkRufallo"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"
-        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/CEvans_img"
-        app:layout_constraintTop_toTopOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+        app:layout_constraintTop_toTopOf="@id/cast" />
 
     <ImageView
         android:id="@+id/CHemisworth_img"
@@ -264,11 +264,10 @@
         android:layout_height="0dp"
         android:scaleType="fitCenter"
         android:src="@drawable/CHemsworth"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
-        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_img"
-        app:layout_constraintTop_toTopOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+        app:layout_constraintTop_toTopOf="@id/cast" />
 
     <!--CAST NAME-->
     <!--    <TextView-->
