@@ -38,8 +38,6 @@
         android:id="@+id/avengers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:breakStrategy="balanced"
         android:gravity="center_vertical"
         android:lineHeight="40dp"
@@ -49,7 +47,8 @@
         android:textColor="#ECECEC"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+        app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
         app:layout_constraintTop_toBottomOf="@id/orig_GL" />
 
     <!--GENRE-->
@@ -57,12 +56,10 @@
         android:id="@+id/genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:text="Action, Adventure, Fantasy"
         android:textColor="#FF3466"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/avengers" />
 
 
@@ -163,21 +160,18 @@
         android:id="@+id/storyline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="Storyline"
         android:textColor="#ECECEC"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/s1" />
 
     <TextView
         android:id="@+id/descr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:alpha="0.75"
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
@@ -185,8 +179,8 @@
         android:text="After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
         android:textColor="#FFFFFF"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/storyline" />
 
     <!--CAST TEXT-->
@@ -215,7 +209,7 @@
         app:layout_constraintEnd_toStartOf="@id/CEvans_img"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="@id/root_left_VGL"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toTopOf="@id/cast"
         app:layout_constraintWidth_percent="0.25" />
 
