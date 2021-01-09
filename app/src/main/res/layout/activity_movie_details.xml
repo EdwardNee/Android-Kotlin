@@ -88,6 +88,7 @@
 
     <RatingBar
         style="?android:attr/ratingBarStyleSmall"
+        android:theme="@style/MyRatingBar"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintStart_toEndOf="@id/root_left_VGL"
