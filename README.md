@@ -3,4 +3,6 @@ The project is for learning Kotlin and Android development.
 Contact: eni@edu.hse.ru
 # Project first stage: Movie details in XML  
 
-<a href=""https://imgflip.com/gif/4t74d2""><img src="https://i.imgflip.com/4t738o.gif" title="vie imgflip"></a>
+<p align="center">
+    <a href=""https://imgflip.com/gif/4t74d2"><img src="https://i.imgflip.com/4t738o.gif" title="vie imgflip"></a>
+</p>
