@@ -47,8 +47,8 @@
         android:textColor="#ECECEC"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/orig_GL" />
 
     <!--GENRE-->
@@ -89,69 +89,68 @@
     <RatingBar
         android:id="@+id/ratingBar"
         style="?android:attr/ratingBarStyleSmall"
-        android:theme="@style/MyRatingBar"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toBottomOf="@id/genre"
+        android:layout_height="wrap_content"
         android:numStars="5"
         android:rating="4"
-        />
-<!--    <ImageView-->
-<!--        android:id="@+id/s1"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginEnd="3.25dp"-->
-<!--        android:paddingTop="8dp"-->
-<!--        android:src="@drawable/IconredStar"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/s2"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
+        android:theme="@style/MyRatingBar"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+        app:layout_constraintTop_toBottomOf="@id/genre" />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/s1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="3.25dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        android:src="@drawable/IconredStar"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/s2"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/s2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="3.25dp"-->
-<!--        android:paddingTop="8dp"-->
-<!--        android:src="@drawable/IconredStar"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/s3"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/s1"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/s2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="3.25dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        android:src="@drawable/IconredStar"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/s3"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/s1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/s3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="3.25dp"-->
-<!--        android:paddingTop="8dp"-->
-<!--        android:src="@drawable/IconredStar"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/s4"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/s2"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/s3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="3.25dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        android:src="@drawable/IconredStar"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/s4"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/s2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/s4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingTop="8dp"-->
-<!--        android:paddingRight="3.25dp"-->
-<!--        android:src="@drawable/IconredStar"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/s5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/s3"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/s4"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        android:paddingRight="3.25dp"-->
+    <!--        android:src="@drawable/IconredStar"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/s5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/s3"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/s5"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="3.25dp"-->
-<!--        android:paddingTop="8dp"-->
-<!--        android:src="@drawable/grayStar"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/stars_VGL"-->
-<!--        app:layout_constraintStart_toEndOf="@id/s4"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/s5"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="3.25dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        android:src="@drawable/grayStar"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/stars_VGL"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/s4"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/genre" />-->
 
 
     <TextView
@@ -340,13 +339,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/star_GL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="375dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/root_left_VGL"
