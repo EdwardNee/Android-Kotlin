@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MovieDetailsActivity">
 
+<!--BACK BTTN-->
+
     <!--ORIG image (UPPER)-->
     <ImageView
         android:id="@+id/orig"
@@ -17,10 +19,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Back"
+        android:layout_marginTop="56dp"
+        android:drawablePadding="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/Pathback"
+        />
 
     <!--BG image-->
-
-    <!--AVENGERS-->
     <ImageView
         android:id="@+id/BG"
         android:layout_width="match_parent"
@@ -34,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/orig_GL"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--AVENGERS-->
     <TextView
         android:id="@+id/avengers"
         android:layout_width="0dp"
