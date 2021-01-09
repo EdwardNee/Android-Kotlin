@@ -47,17 +47,16 @@
     <!--AVENGERS-->
     <TextView
         android:id="@+id/avengers"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
         android:breakStrategy="balanced"
         android:lineHeight="40dp"
-        android:minLines="2"
-        android:singleLine="false"
+        android:maxLines="2"
         android:text="Avengers: End Game"
         android:textColor="#ECECEC"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
         app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/orig_GL" />
 
@@ -361,4 +360,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_VGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="197dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
