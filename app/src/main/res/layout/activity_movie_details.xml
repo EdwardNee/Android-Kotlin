@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MovieDetailsActivity">
 
-    <!--BACK BTTN-->
-
     <!--ORIG image (UPPER)-->
     <ImageView
         android:id="@+id/orig"
@@ -20,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--BACK BTTN-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
