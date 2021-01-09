@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidKotlin</string>
+    <string name="back">Back</string>
+    <string name="avengers_end_game">Avengers: End Game</string>
+    <string name="action_adventure_fantasy">Action, Adventure, Fantasy</string>
+    <string name="_13">13+</string>
 </resources>
