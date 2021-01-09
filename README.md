@@ -9,5 +9,5 @@ Contact: eni@edu.hse.ru
 </p>
    
 <p align="center">   
-    ![Image alt](https://github.com/EdwardNee/Android-Kotlin/blob/master/workshops/HW2_details_page.PNG)  
+    <img src="https://github.com/EdwardNee/Android-Kotlin/blob/master/workshops/HW2_details_page.PNG">
 </p>
