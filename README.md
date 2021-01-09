@@ -7,4 +7,5 @@ Contact: eni@edu.hse.ru
 <p align="center">
     <a href=""https://imgflip.com/gif/4t74d2"><img width="500" height="600" src="https://i.imgflip.com/4t738o.gif" title="landscape gif"></a>
 </p>
+                                                                                                                                        
 ![Image alt](https://github.com/EdwardNee/Android-Kotlin/blob/master/workshops/HW2_details_page.PNG)  
