@@ -216,6 +216,7 @@
         android:src="@drawable/RDJr"
         app:layout_constraintEnd_toStartOf="@id/CEvans_img"
         app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/cast"
         app:layout_constraintWidth_percent="0.25" />
@@ -237,7 +238,6 @@
         android:id="@+id/MRuffalo_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/RDJr"
         app:layout_constraintEnd_toStartOf="@id/CHemisworth_img"
@@ -250,81 +250,83 @@
         android:id="@+id/CHemisworth_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:scaleType="fitCenter"
         android:src="@drawable/RDJr"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toEndOf="@id/MRuffalo_img"
         app:layout_constraintTop_toTopOf="@id/cast"
         app:layout_constraintWidth_percent="0.25" />
 
     <!--CAST NAME-->
-    <TextView
-        android:id="@+id/RDowney_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:breakStrategy="balanced"
-        android:text="Robert Downey Jr."
-        android:textColor="#D8D8D8"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/CEvans_text"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/RDowney_text"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:breakStrategy="balanced"-->
+    <!--        android:text="Robert Downey Jr."-->
+    <!--        android:textColor="#D8D8D8"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/CEvans_text"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cast"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
-    <TextView
-        android:id="@+id/CEvans_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:breakStrategy="balanced"
-        android:text="Chris Evans"
-        android:textColor="#D8D8D8"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/MRuffalo_text"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintStart_toEndOf="@id/RDowney_text"
-        app:layout_constraintTop_toBottomOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/CEvans_text"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:breakStrategy="balanced"-->
+    <!--        android:text="Chris Evans"-->
+    <!--        android:textColor="#D8D8D8"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/MRuffalo_text"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/RDowney_text"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cast"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
-    <TextView
-        android:id="@+id/MRuffalo_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:breakStrategy="balanced"
-        android:text="Mark Ruffalo"
-        android:textColor="#D8D8D8"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/CHemisworth_text"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintStart_toEndOf="@id/CEvans_text"
-        app:layout_constraintTop_toBottomOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/MRuffalo_text"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:breakStrategy="balanced"-->
+    <!--        android:text="Mark Ruffalo"-->
+    <!--        android:textColor="#D8D8D8"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/CHemisworth_text"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/CEvans_text"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cast"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
 
-    <TextView
-        android:id="@+id/CHemisworth_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:breakStrategy="balanced"
-        android:text="Chris Hemsasdasdworth"
-        android:textColor="#D8D8D8"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintStart_toEndOf="@id/MRuffalo_text"
-        app:layout_constraintTop_toBottomOf="@id/cast"
-        app:layout_constraintWidth_percent="0.25" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/CHemisworth_text"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:breakStrategy="balanced"-->
+    <!--        android:text="Chris Hemsasdasdworth"-->
+    <!--        android:textColor="#D8D8D8"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/MRuffalo_text"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cast"-->
+    <!--        app:layout_constraintWidth_percent="0.25" />-->
 
 
     <androidx.constraintlayout.widget.Guideline
