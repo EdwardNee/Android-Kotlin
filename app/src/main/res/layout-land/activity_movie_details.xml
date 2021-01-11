@@ -36,6 +36,7 @@
             app:layout_constraintStart_toEndOf="@id/root_left_VGL"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <!--BG image-->
         <ImageView
             android:id="@+id/BG"
@@ -80,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:src="@drawable/Rectangle"
+            android:src="@drawable/r_rectangle"
             app:layout_constraintBottom_toTopOf="@id/orig_GL"
             app:layout_constraintStart_toStartOf="parent" />
 
