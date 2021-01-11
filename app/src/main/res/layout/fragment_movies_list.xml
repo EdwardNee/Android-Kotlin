@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/avengers_framelayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -107,17 +108,16 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginStart="8dp"
-            android:text="137 MIN"
-            android:textStyle="bold"
-            android:textColor="#565665"
             android:layout_marginBottom="8dp"
-            android:textSize="8sp" />
-
-
+            android:text="137 MIN"
+            android:textColor="#565665"
+            android:textSize="8sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
