@@ -1,5 +1,6 @@
 package com.niveloper.androidkotlin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,21 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [FragmentMoviesDetails.newInstance] factory method to
  * create an instance of this fragment.
  */
 class FragmentMoviesDetails : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +25,9 @@ class FragmentMoviesDetails : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val back_tv =view.findViewById<TextView>(R.id.)
+        val backTv = view.findViewById<TextView>(R.id.back_text).setOnClickListener {
+            startActivity(Intent(this, FragmentMoviesDetails::class.java))
+        }
     }
 
     companion object {
@@ -55,4 +49,5 @@ class FragmentMoviesDetails : Fragment() {
                 }
             }
     }
+
 }
