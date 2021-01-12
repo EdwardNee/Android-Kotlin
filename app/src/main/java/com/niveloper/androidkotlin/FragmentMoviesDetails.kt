@@ -28,7 +28,7 @@ class FragmentMoviesDetails : Fragment() {
         val backTv = view.findViewById<TextView>(R.id.back_text).setOnClickListener {
             val frag = FragmentMoviesList()
             activity!!.supportFragmentManager.beginTransaction()
-                .replace(android.R.id.Layout_container, nextFrag, "findThisFragment")
+                .replace(android.R.id., frag, null)
                 .addToBackStack(null)
                 .commit()
         }
