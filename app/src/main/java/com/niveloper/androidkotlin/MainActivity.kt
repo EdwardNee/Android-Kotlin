@@ -8,6 +8,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
         supportFragmentManager.beginTransaction()
-            .add(R.id.)
+            .add(R.id.fragment_container_main, FragmentMoviesList())
     }
 }
