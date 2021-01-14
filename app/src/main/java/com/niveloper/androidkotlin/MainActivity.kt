@@ -2,6 +2,7 @@ package com.niveloper.androidkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,5 +12,15 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container_main, FragmentMoviesList())
             .addToBackStack(null)
             .commit()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
     }
 }
