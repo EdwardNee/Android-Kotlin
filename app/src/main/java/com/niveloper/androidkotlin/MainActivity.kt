@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container_main, FragmentMoviesList())
+            .addToBackStack(null)
             .commit()
     }
 }
