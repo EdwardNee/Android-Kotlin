@@ -3,6 +3,7 @@ package com.niveloper.androidkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.FrameLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        val fragment = supportFragmentManager.fragments[supportFragmentManager.backStackEntryCount - 1]
-        supportFragmentManager.putFragment(outState, "TAG", fragment)
-
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
