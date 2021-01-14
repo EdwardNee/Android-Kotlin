@@ -16,11 +16,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        val fragment = supportFragmentManager.fragments[supportFragmentManager.backStackEntryCount - 1]
+        supportFragmentManager.putFragment(outState, "TAG", fragment)
 
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
+        val fragment = savedInstanceState.
 
     }
 }
