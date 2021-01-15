@@ -37,4 +37,9 @@ class FragmentMoviesList : Fragment() {
                 .commit()
         }
     }
+
+
+    interface moviesListClickListener {
+        fun onMovieSelected()
+    }
 }
