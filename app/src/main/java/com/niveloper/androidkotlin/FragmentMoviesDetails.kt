@@ -54,6 +54,6 @@ class FragmentMoviesDetails : Fragment() {
 //    }
 }
 
-interface MovieDetailsBackClickListener{
+interface MovieDetailsBackClickListener {
     fun onMovieDeselected()
 }

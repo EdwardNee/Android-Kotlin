@@ -16,6 +16,12 @@ import android.widget.FrameLayout
  */
 class FragmentMoviesList : Fragment() {
     var listener: MoviesListClickListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is MoviesListClickListener)
+            listener = context
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
