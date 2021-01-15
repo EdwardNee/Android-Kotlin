@@ -33,25 +33,8 @@ class FragmentMoviesDetails : Fragment() {
                 .commit()
         }
     }
+}
 
-//    companion object {
-//        /**
-//         * Use this factory method to create a new instance of
-//         * this fragment using the provided parameters.
-//         *
-//         * @param param1 Parameter 1.
-//         * @param param2 Parameter 2.
-//         * @return A new instance of fragment FragmentMoviesDetails.
-//         */
-//        // TODO: Rename and change types and number of parameters
-//        @JvmStatic
-//        fun newInstance(param1: String, param2: String) =
-//            FragmentMoviesDetails().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-//                }
-//            }
-//    }
-
+interface MovieDetailsBackClickListener{
+    fun onMovieDeselected()
 }
