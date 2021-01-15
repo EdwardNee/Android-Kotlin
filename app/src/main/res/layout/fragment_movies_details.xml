@@ -8,7 +8,6 @@
     tools:context=".MovieDetailsActivity">
 
     <!--ORIG image (UPPER)-->
-    <!--BACK BTTN-->
     <ImageView
         android:id="@+id/orig"
         android:layout_width="match_parent"
@@ -22,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--BACK BTTN-->
     <TextView
         android:id="@+id/back_text"
         android:layout_width="wrap_content"
