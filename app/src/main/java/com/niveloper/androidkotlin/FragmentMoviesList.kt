@@ -25,19 +25,21 @@ class FragmentMoviesList : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        view?.findViewById<View>(R.id.fr)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val movie = view.findViewById<FrameLayout>(R.id.avengers_framelayout).setOnClickListener {
-            val frag = FragmentMoviesDetails()
-            activity!!.supportFragmentManager.beginTransaction()
-                .replace(this.id, frag, null)
-                .addToBackStack(null)
-                .commit()
+        view!!.findViewById<View>(R.id.fragment_movies_list).setOnClickListener {
+            listener?.onMovieSelected()
         }
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        val movie = view.findViewById<FrameLayout>(R.id.avengers_framelayout).setOnClickListener {
+//            val frag = FragmentMoviesDetails()
+//            activity!!.supportFragmentManager.beginTransaction()
+//                .replace(this.id, frag, null)
+//                .addToBackStack(null)
+//                .commit()
+//        }
+//    }
 }
 
 interface MoviesListClickListener {
