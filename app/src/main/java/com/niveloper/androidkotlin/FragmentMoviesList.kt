@@ -37,6 +37,11 @@ class FragmentMoviesList : Fragment() {
             listener?.onMovieSelected()
         }
     }
+
+    override fun onDetach() {
+        listener = null
+        super.onDetach()
+    }
 }
 
 interface MoviesListClickListener {
