@@ -22,13 +22,23 @@ class MainActivity : AppCompatActivity() {
         toMoviesList()
     }
 
+    /**
+     * Function replaces previous fragment to fragment movies list.
+     */
     private fun toMoviesList() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container_main, FragmentMoviesList())
+            .replace(
+                R.id.fragment_container_main,
+                FragmentMoviesList(),
+                FragmentMoviesList::class.java.simpleName
+            )
             .addToBackStack("trans:${FragmentMoviesList::class.java.simpleName}")
             .commit()
     }
 
+    /**
+     * Function adds a fragment movie details to fragment_container
+     */
     private fun toMovieDetails() {
         supportFragmentManager.beginTransaction().apply {
             add(
@@ -36,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 FragmentMoviesDetails(),
                 FragmentMoviesDetails::class.java.simpleName
             )
+                .addToBackStack("trans:${FragmentMoviesDetails::class.java.simpleName}")
                 .commit()
         }
     }
