@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
     /**
      * Function goes back to last fragment.
      */
-    private fun toBack(){
+    private fun toBack() {
         supportFragmentManager.popBackStack()
     }
 }
