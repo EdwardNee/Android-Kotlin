@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
     }
 
     override fun onMovieSelected() {
-        toBack()
+        toMovieDetails()
     }
 
     override fun onMovieDeselected() {
-        toMoviesList()
+        toBack()
     }
 
     /**
