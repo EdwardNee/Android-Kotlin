@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.FrameLayout
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsBackClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
             toMoviesList()
     }
 
-    fun onMovieSelected() {
+    override fun onMovieSelected() {
         toBack()
     }
 
-    fun onMovieDeselected() {
+    override fun onMovieDeselected() {
         toMoviesList()
     }
 
