@@ -1,5 +1,6 @@
 package com.niveloper.androidkotlin
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -24,6 +25,12 @@ class FragmentMoviesDetails : Fragment() {
         return inflater.inflate(R.layout.fragment_movies_details, container, false)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is MovieDetailsBackClickListener)
+            listener = context
+    }
+
     override fun onStart() {
         super.onStart()
         view!!.findViewById<View>(R.id.back_text).setOnClickListener {
@@ -31,6 +38,10 @@ class FragmentMoviesDetails : Fragment() {
         }
     }
 
+    override fun onDetach() {
+        listener = null
+        super.onDetach()
+    }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
 //        val backTv = view.findViewById<TextView>(R.id.back_text).setOnClickListener {
