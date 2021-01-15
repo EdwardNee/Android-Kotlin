@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onMovieSelected() {
-        toMovieDetails()
+        toBack()
     }
 
     fun onMovieDeselected() {
@@ -51,13 +51,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        val fragment = savedInstanceState.
-
+    /**
+     * Function goes back to last fragment.
+     */
+    private fun toBack(){
+        supportFragmentManager.popBackStack()
     }
 }
