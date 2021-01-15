@@ -14,11 +14,30 @@ class MainActivity : AppCompatActivity() {
             toMoviesList()
     }
 
-    private fun toMoviesList(){
+    fun onMovieSelected() {
+        toMovieDetails()
+    }
+
+    fun onMovieDeselected() {
+        toMoviesList()
+    }
+
+    private fun toMoviesList() {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container_main, FragmentMoviesList())
             .addToBackStack("trans:${FragmentMoviesList::class.java.simpleName}")
             .commit()
+    }
+
+    private fun toMovieDetails() {
+        supportFragmentManager.beginTransaction().apply {
+            add(
+                R.id.fragment_container_main,
+                FragmentMoviesDetails(),
+                FragmentMoviesDetails::class.java.simpleName
+            )
+                .commit()
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
