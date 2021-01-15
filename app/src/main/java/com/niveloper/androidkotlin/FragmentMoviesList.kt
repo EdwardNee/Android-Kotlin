@@ -34,7 +34,7 @@ class FragmentMoviesList : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        view!!.findViewById<View>(R.id.fragment_movies_list).setOnClickListener {
+        view!!.findViewById<View>(R.id.avengers_framelayout).setOnClickListener {
             listener?.onMovieSelected()
         }
     }
