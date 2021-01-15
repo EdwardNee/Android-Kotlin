@@ -15,6 +15,7 @@ import android.widget.TextView
  */
 class FragmentMoviesDetails : Fragment() {
 
+    var listener: MovieDetailsBackClickListener? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,16 +24,23 @@ class FragmentMoviesDetails : Fragment() {
         return inflater.inflate(R.layout.fragment_movies_details, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val backTv = view.findViewById<TextView>(R.id.back_text).setOnClickListener {
-            val frag = FragmentMoviesList()
-            activity!!.supportFragmentManager.beginTransaction()
-                .replace(this.id, frag, null)
-                .addToBackStack(null)
-                .commit()
+    override fun onStart() {
+        super.onStart()
+        view!!.findViewById<View>(R.id.back_text).setOnClickListener {
+            listener?.onMovieDeselected()
         }
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        val backTv = view.findViewById<TextView>(R.id.back_text).setOnClickListener {
+//            val frag = FragmentMoviesList()
+//            activity!!.supportFragmentManager.beginTransaction()
+//                .replace(this.id, frag, null)
+//                .addToBackStack(null)
+//                .commit()
+//        }
+//    }
 }
 
 interface MovieDetailsBackClickListener{
