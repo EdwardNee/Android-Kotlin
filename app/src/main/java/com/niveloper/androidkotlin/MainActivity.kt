@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private fun toMoviesList(){
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container_main, FragmentMoviesList())
-            .addToBackStack(null)
+            .addToBackStack("trans:${FragmentMoviesList::class.java.simpleName}")
             .commit()
     }
 
