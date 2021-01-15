@@ -9,7 +9,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toMoviesList()
+        //If there is nothing saved that means we do not have any fragments started.
+        if (savedInstanceState == null)
+            toMoviesList()
     }
 
     private fun toMoviesList(){

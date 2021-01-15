@@ -22,6 +22,7 @@ class FragmentMoviesList : Fragment() {
         if (context is MoviesListClickListener)
             listener = context
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
