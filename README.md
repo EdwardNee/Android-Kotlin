@@ -19,5 +19,5 @@ Contact: eni@edu.hse.ru
 </p>
                                                                                                                                         
 <p align="center">   
-    <img src="https://github.com/EdwardNee/Android-Kotlin/tree/master/workshops/HW3_movie_list.PNG">
+    <img src="https://github.com/EdwardNee/Android-Kotlin/blob/master/workshops/HW3_movie_list.PNG">
 </p>
