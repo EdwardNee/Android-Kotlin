@@ -14,3 +14,6 @@ Contact: eni@edu.hse.ru
 
 
 # Project second stage: added list video and transitions 
+<p align="center">
+    <a href=""https://imgflip.com/gif/4u2l7a"><img width="500" height="600" src="https://i.imgflip.com/4u2l7a.gif" title="landscape gif"></a>
+</p>
