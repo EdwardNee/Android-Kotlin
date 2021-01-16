@@ -17,3 +17,6 @@ Contact: eni@edu.hse.ru
 <p align="center">
     <a href=""https://imgflip.com/gif/4u2l7a"><img width="500" height="600" src="https://i.imgflip.com/4u2l7a.gif" title="landscape gif"></a>
 </p>
+<p align="center">   
+    <img src="https://github.com/EdwardNee/Android-Kotlin/tree/master/workshops/HW3_movie_list.PNG">
+</p>
