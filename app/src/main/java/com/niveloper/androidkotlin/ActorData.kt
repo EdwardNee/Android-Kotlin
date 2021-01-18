@@ -1,9 +1,9 @@
 package com.niveloper.androidkotlin
 
-import android.widget.ImageView
+import androidx.annotation.DrawableRes
 
 data class ActorData(
     val name: String,
     val id: Int,
-    val logo: ImageView,
+    @DrawableRes val logo: Int,
 )

@@ -1,11 +1,11 @@
 package com.niveloper.androidkotlin
 
-import android.widget.ImageView
+import androidx.annotation.DrawableRes
 
 data class MovieData(
     val name: String,
     val id: Int,
-    val logo: ImageView,
+    @DrawableRes val logo: Int,
     val aging: Int,
     val storyLine: String,
     val rating: Int,
