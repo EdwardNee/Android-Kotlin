@@ -9,5 +9,6 @@ data class MovieData(
     val aging: Int,
     val storyLine: String,
     val rating: Int,
-    val genre: String
+    val genre: String,
+    val reviewsCnt: Int
 )
