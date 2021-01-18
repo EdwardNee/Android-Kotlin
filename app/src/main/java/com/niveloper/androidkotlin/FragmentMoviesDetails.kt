@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * A simple [Fragment] subclass.
@@ -17,12 +18,19 @@ import android.widget.TextView
 class FragmentMoviesDetails : Fragment() {
 
     var listener: MovieDetailsBackClickListener? = null
+    var recycler: RecyclerView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_movies_details, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        recycler = view.findViewById(R.id.rv_actors)
+        recycler?.adapter = AdapterMovieDetails()
     }
 
     override fun onAttach(context: Context) {
