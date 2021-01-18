@@ -2,6 +2,7 @@ package com.niveloper.androidkotlin
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 class AdapterMoviesList : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -19,5 +20,19 @@ class AdapterMoviesList : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+}
+
+/**
+ * Callback class for updating list of movies.
+ */
+class DifCallback : DiffUtil.ItemCallback<MovieData>(){
+    override fun areItemsTheSame(oldItem: MovieData, newItem: MovieData): Boolean {
+        return oldItem.name == newItem.name
+    }
+
+    override fun areContentsTheSame(oldItem: MovieData, newItem: MovieData): Boolean {
+        return oldItem == newItem
+    }
 
 }
