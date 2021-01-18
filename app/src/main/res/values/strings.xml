@@ -14,4 +14,6 @@
     <string name="chris_hemsworth">Chris Hemsworth</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movies_list">Movies list</string>
+    <string name="_137_min_duration">137 MIN</string>
 </resources>
