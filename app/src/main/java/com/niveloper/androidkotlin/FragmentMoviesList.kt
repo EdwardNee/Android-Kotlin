@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
  * create an instance of this fragment.
  */
 class FragmentMoviesList : Fragment() {
-    var recycler : RecyclerView? = null
     var listener: MoviesListClickListener? = null
 
     override fun onAttach(context: Context) {
@@ -35,7 +34,7 @@ class FragmentMoviesList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recycler = view.findViewById(R.id.rv_movies)
+        var recycler = view.findViewById<RecyclerView>(R.id.rv_movies)
         //Instantiate adapter for recycler
         recycler?.adapter = AdapterMoviesList()
     }

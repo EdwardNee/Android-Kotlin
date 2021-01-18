@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView
 class FragmentMoviesDetails : Fragment() {
 
     var listener: MovieDetailsBackClickListener? = null
-    var recycler: RecyclerView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +28,7 @@ class FragmentMoviesDetails : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recycler = view.findViewById(R.id.rv_actors)
+        var recycler = view.findViewById<RecyclerView>(R.id.rv_actors)
         recycler?.adapter = AdapterMovieDetails()
     }
 
