@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.recyclerview.widget.RecyclerView
 
 
 /**
@@ -15,6 +16,7 @@ import android.widget.FrameLayout
  * create an instance of this fragment.
  */
 class FragmentMoviesList : Fragment() {
+    var recycler : RecyclerView? = null
     var listener: MoviesListClickListener? = null
 
     override fun onAttach(context: Context) {
@@ -31,6 +33,12 @@ class FragmentMoviesList : Fragment() {
         return inflater.inflate(R.layout.fragment_movies_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        recycler = view.findViewById(R.id.rv_movies)
+        //Instantiate adapter for recycler
+        recycler?.adapter = AdapterMoviesList()
+    }
 
     override fun onStart() {
         super.onStart()
