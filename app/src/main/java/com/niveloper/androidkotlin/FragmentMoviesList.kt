@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -17,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class FragmentMoviesList : Fragment() {
     var listener: MoviesListClickListener? = null
-
+    private lateinit var adapter: AdapterMoviesList
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is MoviesListClickListener)
@@ -34,17 +35,22 @@ class FragmentMoviesList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var recycler = view.findViewById<RecyclerView>(R.id.rv_movies)
-        //Instantiate adapter for recycler
-        recycler?.adapter = AdapterMoviesList()
+        view.findViewById<RecyclerView>(R.id.rv_movies).apply {
+            //Set a grid: views will be in a 2 columns
+            layoutManager = GridLayoutManager(context, 2)
+            //Instantiate adapter for recycler
+            adapter = AdapterMoviesList()
+            setOnClickListener { listener?.onMovieSelected() }
+        }
+        this.adapter = AdapterMoviesList()
     }
 
-    override fun onStart() {
-        super.onStart()
-        view!!.findViewById<View>(R.id.avengers_framelayout).setOnClickListener {
-            listener?.onMovieSelected()
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        view!!.findViewById<View>(R.id.avengers_framelayout).setOnClickListener {
+//            listener?.onMovieSelected()
+//        }
+//    }
 
     override fun onDetach() {
         listener = null

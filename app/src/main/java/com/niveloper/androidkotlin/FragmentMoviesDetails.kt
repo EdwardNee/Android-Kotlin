@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -16,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
  * create an instance of this fragment.
  */
 class FragmentMoviesDetails : Fragment() {
-
+    private lateinit var adapter: AdapterMovieDetails
     var listener: MovieDetailsBackClickListener? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +29,11 @@ class FragmentMoviesDetails : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var recycler = view.findViewById<RecyclerView>(R.id.rv_actors)
-        recycler?.adapter = AdapterMovieDetails()
+        view.findViewById<RecyclerView>(R.id.rv_actors).apply {
+            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            adapter = AdapterMovieDetails()
+        }
+        this.adapter = AdapterMovieDetails()
     }
 
     override fun onAttach(context: Context) {
