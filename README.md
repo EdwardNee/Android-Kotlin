@@ -1,4 +1,4 @@
-# Android-Kotlin: App for movie
+# Android-Kotlin: App for movies
 The project is for learning Kotlin and Android development.
 
 Contact: eni@edu.hse.ru
