@@ -1,5 +1,5 @@
-# Android-Kotlin: App for movie
-The project is for learning Kotlin and Android development.
+# Android-Kotlin: App for movies  
+The project is for learning Kotlin and Android development. The app represents a list of movies and films with reviews and users' marks - how they evaluate the film.
 
 Contact: eni@edu.hse.ru
 # Project first stage: Movie details in XML  
