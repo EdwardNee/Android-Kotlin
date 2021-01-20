@@ -31,7 +31,7 @@ class DataStorage {
                 R.drawable.ternet_movie,
                 R.drawable.bg_fragment,
                 16,
-                "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+                "A secret agent embarks on a dangerous, time-bending mission to prevent the start of World War III.",
                 true,
                 5,
                 "Action, Sci-Fi, Thriller",
