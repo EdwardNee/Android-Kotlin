@@ -3,6 +3,7 @@ package com.niveloper.androidkotlin
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,7 @@ class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCal
 }
 
 class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
+    private val actorImg: ImageView = view.findViewById(R.id.)
 }
 
 /**
