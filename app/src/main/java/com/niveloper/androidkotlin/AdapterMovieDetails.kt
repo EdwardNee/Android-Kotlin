@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,14 +17,19 @@ class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCal
     }
 
     override fun onBindViewHolder(holder: ActorViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = getItem(position)
+        holder.onBind(item)
     }
-
-
 }
 
 class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val actorImg: ImageView = view.findViewById(R.id.)
+    private val actorImg: ImageView = view.findViewById(R.id.actor_img)
+    private val actorName: TextView = view.findViewById(R.id.actor_name)
+
+    fun onBind(item: ActorData) {
+        actorImg.setImageResource(item.logo)
+        actorName.text = item.name
+    }
 }
 
 /**
