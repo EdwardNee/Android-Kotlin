@@ -22,7 +22,15 @@ class AdapterMoviesList : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallb
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    private val movieName =
+    private val
+    private val
+    private val
+    private val
+    private val
+    fun onBind(item : MovieData){
 
+    }
 }
 
 /**
