@@ -26,17 +26,24 @@ class AdapterMoviesList : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallb
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val movieName :TextView = view.findViewById(R.id.movie_naming)
-    private val movieImg : ImageView = view.findViewById(R.id.movie_img)
-    private val movieAging : TextView = view.findViewById(R.id.movie_aging)
+    private val movieName: TextView = view.findViewById(R.id.movie_naming)
+    private val movieAging: TextView = view.findViewById(R.id.movie_aging)
     private val movieGenre: TextView = view.findViewById(R.id.genre_movie)
-    private val movieRating: RatingBar = view.findViewById(R.id.ratingBar_movie)
     private val movieReviews: TextView = view.findViewById(R.id.reviews_movie)
     private val movieDuration: TextView = view.findViewById(R.id.movie_duration)
-    private val movieLiked: TextView = view.findViewById(R.id.reaction)
+    private val movieLiked: ImageView = view.findViewById(R.id.reaction)
+    private val movieImg: ImageView = view.findViewById(R.id.movie_img)
+    private val movieRating: RatingBar = view.findViewById(R.id.ratingBar_movie)
 
-    fun onBind(item : MovieData){
-
+    fun onBind(item: MovieData) {
+        movieImg.setImageResource(item.logo)
+        movieName.text = item.name
+        movieAging.text = itemView.context.getString(item.aging) + "+"
+        movieGenre.text = item.genre
+        movieReviews.text = itemView.context.getString(item.reviewsCnt)
+        movieDuration.text = itemView.context.getString(item.time) + " MINUTES"
+        movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
+        movieRating.numStars = item.rating
     }
 }
 
