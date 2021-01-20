@@ -9,31 +9,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <TextView
-        android:id="@+id/movies_list_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:drawableStart="@drawable/shoot"
-        android:drawablePadding="8dp"
-        android:text="@string/movies_list"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/avengers_framelayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="30dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/movies_list_text"
-        android:focusable="true">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/avengers_framelayout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/movies_list_text"-->
+<!--        android:focusable="true">-->
 
         <ImageView
             android:layout_width="wrap_content"
@@ -126,6 +111,7 @@
             android:textColor="#565665"
             android:textSize="8sp"
             android:textStyle="bold" />
-    </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
