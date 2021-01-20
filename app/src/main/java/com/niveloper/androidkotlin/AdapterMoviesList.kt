@@ -3,6 +3,7 @@ package com.niveloper.androidkotlin
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -22,8 +23,8 @@ class AdapterMoviesList : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallb
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val movieName =
-    private val
+    private val movieName :TextView = view.findViewById(R.id.movie_naming)
+    private val movieImg :
     private val
     private val
     private val

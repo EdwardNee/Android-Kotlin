@@ -1,117 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/fragment_movies_list"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@drawable/background">-->
 
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_movies_list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background">
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/avengers_framelayout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="12dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:clickable="true"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/movies_list_text"-->
-<!--        android:focusable="true">-->
-
-        <ImageView
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/avengers_framelayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bg_fragment" />
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:focusable="true">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="2dp"
-            android:paddingEnd="0dp"
-            android:paddingTop="3dp"
-            android:src="@drawable/movie_fragment" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_fragment" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="2dp"
-            android:paddingEnd="0dp"
-            android:paddingTop="3dp"
-            android:src="@drawable/mask_movie_frag" />
+                <ImageView
+                    android:id="@+id/movie_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="2dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="0dp"
+                    android:src="@drawable/movie_fragment" />
 
-        <TextView
-            android:id="@+id/reviews_m_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="48dp"
-            android:text="@string/reviews_string"
-            android:textColor="#6D6D80"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ratingBar"
-            app:layout_constraintTop_toBottomOf="@id/genre" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="2dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="0dp"
+                    android:src="@drawable/mask_movie_frag" />
 
-
-        <RatingBar
-            android:id="@+id/ratingBar_m_list"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="42dp"
-            android:isIndicator="true"
-            android:max="5"
-            android:numStars="5"
-            android:rating="4"
-            android:scaleX=".6"
-            android:scaleY=".6"
-            android:theme="@style/MyRatingBar"
-            android:transformPivotX="0dp"
-            android:transformPivotY="0dp"
-            app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-            app:layout_constraintTop_toBottomOf="@id/genre" />
-
-        <TextView
-            android:id="@+id/genre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="60dp"
-            android:text="@string/genre_string"
-            android:textColor="#FF3466"
-            android:textSize="8sp"
-            app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-            app:layout_constraintTop_toBottomOf="@id/avengers" />
-
-        <TextView
-            android:id="@+id/movie_naming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/movie_name"
-            android:textColor="#ECECEC"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/_137_min_duration"
-            android:textColor="#565665"
-            android:textSize="8sp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/reviews_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="48dp"
+                    android:text="@string/reviews_string"
+                    android:textColor="#6D6D80"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ratingBar"
+                    app:layout_constraintTop_toBottomOf="@id/genre" />
 
 
+                <RatingBar
+                    android:id="@+id/ratingBar_movie"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="42dp"
+                    android:isIndicator="true"
+                    android:max="5"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:scaleX=".6"
+                    android:scaleY=".6"
+                    android:theme="@style/MyRatingBar"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+                    app:layout_constraintTop_toBottomOf="@id/genre" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/genre_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="60dp"
+                    android:text="@string/genre_string"
+                    android:textColor="#FF3466"
+                    android:textSize="8sp"
+                    app:layout_constraintStart_toEndOf="@id/root_left_VGL"
+                    app:layout_constraintTop_toBottomOf="@id/avengers" />
+
+                <TextView
+                    android:id="@+id/movie_naming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/movie_name"
+                    android:textColor="#ECECEC"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/_137_min_duration"
+                    android:textColor="#565665"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/reaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/like" />
+
+
+                <ImageView
+                    android:id="@+id/rect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/r_rectangle" />
+
+                <TextView
+                    android:id="@+id/movie_aging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/aging_string"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+        </FrameLayout>
