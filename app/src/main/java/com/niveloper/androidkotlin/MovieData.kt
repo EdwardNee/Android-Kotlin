@@ -9,6 +9,7 @@ data class MovieData(
     @DrawableRes val bg: Int,
     val aging: Int,
     val storyLine: String,
+    val isLiked: Boolean,
     val rating: Int,
     val genre: String,
     val reviewsCnt: Int,
