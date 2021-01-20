@@ -1,19 +1,23 @@
 package com.niveloper.androidkotlin
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterMovieDetails : ListAdapter<ActorData, RecyclerView.ViewHolder>(ActorDiffCallback()) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCallback()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
+        return ActorViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.view_holder_actor, parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: ActorViewHolder, position: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
 
 }
 
