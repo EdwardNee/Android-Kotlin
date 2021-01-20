@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterMoviesList : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {
+class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.view_holder_movie, parent, false)
@@ -19,7 +19,8 @@ class AdapterMoviesList : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallb
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = getItem(position)
+        holder.onBind(item, onClickCard)
     }
 
 
@@ -35,7 +36,7 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val movieImg: ImageView = view.findViewById(R.id.movie_img)
     private val movieRating: RatingBar = view.findViewById(R.id.ratingBar_movie)
 
-    fun onBind(item: MovieData) {
+    fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
         movieImg.setImageResource(item.logo)
         movieName.text = item.name
         movieAging.text = itemView.context.getString(item.aging) + "+"
@@ -44,6 +45,8 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         movieDuration.text = itemView.context.getString(item.time) + " MINUTES"
         movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
         movieRating.numStars = item.rating
+
+        itemView.setOnClickListener { onClickCard(item) }
     }
 }
 
