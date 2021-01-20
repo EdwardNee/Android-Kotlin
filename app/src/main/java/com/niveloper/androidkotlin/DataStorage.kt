@@ -1,7 +1,5 @@
 package com.niveloper.androidkotlin
 
-import android.widget.ImageView
-
 class DataStorage {
     fun getListOfMovies(): Array<MovieData> =
         arrayOf(
