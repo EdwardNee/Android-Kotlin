@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) : ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {
+class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) :
+    ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.view_holder_movie, parent, false)
@@ -22,8 +23,6 @@ class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) : Li
         val item = getItem(position)
         holder.onBind(item, onClickCard)
     }
-
-
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
