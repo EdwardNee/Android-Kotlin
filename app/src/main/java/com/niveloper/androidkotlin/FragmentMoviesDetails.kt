@@ -41,7 +41,6 @@ class FragmentMoviesDetails : Fragment() {
 
             adapter.submitList(movie.cast)
         }
-
     }
 
     override fun onAttach(context: Context) {

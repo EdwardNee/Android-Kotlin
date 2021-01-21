@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
         supportFragmentManager.beginTransaction().apply {
             add(
                 R.id.fragment_container_main,
-                FragmentMoviesDetails(movie),
+                FragmentMoviesDetails.newInstance(movie),
                 FragmentMoviesDetails::class.java.simpleName
             )
                 .addToBackStack("trans:${FragmentMoviesDetails::class.java.simpleName}")
