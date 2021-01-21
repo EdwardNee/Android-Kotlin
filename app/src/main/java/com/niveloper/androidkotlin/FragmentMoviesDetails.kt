@@ -29,6 +29,9 @@ class FragmentMoviesDetails : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Получаем данные по ключу и отрисовываем их на фрагменте.
+        val movie = arguments?.getSerializable(PARAM_MOVIE_DATA) as? MovieData ?: return
+        initMovieData(movie)
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
@@ -55,6 +58,10 @@ class FragmentMoviesDetails : Fragment() {
     override fun onDetach() {
         listener = null
         super.onDetach()
+    }
+
+    private fun initMovieData(movie: MovieData) {
+
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
