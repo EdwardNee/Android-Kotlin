@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,7 +62,12 @@ class FragmentMoviesDetails : Fragment() {
     }
 
     private fun initMovieData(movie: MovieData) {
-
+        view!!.findViewById<TextView>(R.id.movie_naming).text = movie.name
+        view!!.findViewById<ImageView>(R.id.movie_img).setImageResource(movie.logo)
+        view!!.findViewById<TextView>(R.id.movie_aging).text = getString(movie.aging)
+        view!!.findViewById<TextView>(R.id.storyline).text = movie.storyLine
+        view!!.findViewById<TextView>(R.id.genre_movie).text = movie.genre
+        view!!.findViewById<TextView>(R.id.reviews_movie).text = movie.genre
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
