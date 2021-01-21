@@ -11,7 +11,7 @@ data class MovieData(
     val aging: Int,
     val storyLine: String,
     val isLiked: Boolean,
-    val rating: Int,
+    val rating: Float,
     val genre: String,
     val reviewsCnt: Int,
     val time: Int,

@@ -43,7 +43,7 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         movieReviews.text = "tt2"//itemView.context.getString(item.reviewsCnt)
         movieDuration.text = "133"//itemView.context.getString(item.time)
         movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
-        movieRating.numStars = item.rating
+        movieRating.rating = item.rating
 
         itemView.setOnClickListener { onClickCard(item) }
     }

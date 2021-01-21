@@ -70,11 +70,11 @@ class FragmentMoviesDetails : Fragment() {
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.name
         view?.findViewById<ImageView>(R.id.movie_img)?.setImageResource(movie.logo)
-        view?.findViewById<TextView>(R.id.movie_aging)?.text = getString(movie.aging)
+        view?.findViewById<TextView>(R.id.movie_aging)?.text = "mnogo"//getString(movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
         view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genre
         view?.findViewById<TextView>(R.id.reviews_movie)?.text = movie.genre
-        view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.numStars = movie.rating
+        view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
