@@ -73,7 +73,7 @@ class FragmentMoviesDetails : Fragment() {
         view?.findViewById<TextView>(R.id.movie_aging)?.text = getString(R.string.aging_string, movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
         view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genre
-        view?.findViewById<TextView>(R.id.reviews_movie)?.text = movie.genre
+        view?.findViewById<TextView>(R.id.reviews_movie)?.text = getString(R.string.reviews_string, movie.reviewsCnt)
         view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
