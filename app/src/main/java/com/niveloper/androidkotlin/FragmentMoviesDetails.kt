@@ -39,7 +39,7 @@ class FragmentMoviesDetails : Fragment() {
             val adapter = AdapterMovieDetails()
             this.adapter = adapter
 
-            adapter.submitList(movie.actors)
+            adapter.submitList(movie.cast)
         }
 
     }

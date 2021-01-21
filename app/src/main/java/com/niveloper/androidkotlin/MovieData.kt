@@ -15,5 +15,5 @@ data class MovieData(
     val genre: String,
     val reviewsCnt: Int,
     val time: Int,
-    val cast: Array<ActorData>
+    val cast: List<ActorData>
 ) : Serializable

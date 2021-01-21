@@ -15,7 +15,7 @@ object DataStorage {
                 "Action, Adventure, Fantasy",
                 125,
                 137,
-                arrayOf(
+                listOf(
                     ActorData("Robert Downey Jr.", 1, R.drawable.r_d_jr),
                     ActorData("Chris Evans", 2, R.drawable.movie_c_evans),
                     ActorData("Mark Ruffalo", 3, R.drawable.mark_rufallo),
@@ -35,7 +35,7 @@ object DataStorage {
                 "Action, Sci-Fi, Thriller",
                 98,
                 97,
-                arrayOf(
+                listOf(
                     ActorData("Robert Downey Jr.", 1, R.drawable.r_d_jr),
                     ActorData("Chris Evans", 2, R.drawable.movie_c_evans),
                     ActorData("Mark Ruffalo", 3, R.drawable.mark_rufallo),
@@ -55,7 +55,7 @@ object DataStorage {
                 "Action, Adventure, Sci-Fi",
                 38,
                 102,
-                arrayOf(
+                listOf(
                     ActorData("Robert Downey Jr.", 1, R.drawable.r_d_jr),
                     ActorData("Chris Evans", 2, R.drawable.movie_c_evans),
                     ActorData("Mark Ruffalo", 3, R.drawable.mark_rufallo),
@@ -75,7 +75,7 @@ object DataStorage {
                 "Action, Adventure, Fantasy",
                 74,
                 120,
-                arrayOf(
+                listOf(
                     ActorData("Robert Downey Jr.", 1, R.drawable.r_d_jr),
                     ActorData("Chris Evans", 2, R.drawable.movie_c_evans),
                     ActorData("Mark Ruffalo", 3, R.drawable.mark_rufallo),
