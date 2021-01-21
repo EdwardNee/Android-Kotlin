@@ -45,6 +45,10 @@ class FragmentMoviesList : Fragment() {
         this.adapter = AdapterMoviesList()
     }
 
+    fun onClickCard(item : MovieData){
+
+    }
+
 //    override fun onStart() {
 //        super.onStart()
 //        view!!.findViewById<View>(R.id.avengers_framelayout).setOnClickListener {
