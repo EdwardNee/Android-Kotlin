@@ -1,8 +1,8 @@
 package com.niveloper.androidkotlin
 
-class DataStorage {
-    fun getListOfMovies(): Array<MovieData> =
-        arrayOf(
+object DataStorage {
+    fun getListOfMovies(): List<MovieData> =
+        listOf(
             MovieData(
                 "Avengers: End Game",
                 1,

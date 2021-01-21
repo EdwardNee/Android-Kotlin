@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class FragmentMoviesList : Fragment() {
     var listener: MoviesListClickListener? = null
-    private lateinit var adapter: AdapterMoviesList
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is MoviesListClickListener)
@@ -39,13 +37,14 @@ class FragmentMoviesList : Fragment() {
             //Set a grid: views will be in a 2 columns
             layoutManager = GridLayoutManager(context, 2)
             //Instantiate adapter for recycler
-            adapter = AdapterMoviesList()
-            setOnClickListener { listener?.onMovieSelected() }
+            val adapter = AdapterMoviesList { movieData -> listener?.onMovieSelected(movieData) }
+            this.adapter = adapter
+
+            adapter.submitList(DataStorage.getListOfMovies())
         }
-        this.adapter = AdapterMoviesList()
     }
 
-    fun onClickCard(item : MovieData){
+    fun onClickCard(item: MovieData) {
 
     }
 
@@ -63,5 +62,5 @@ class FragmentMoviesList : Fragment() {
 }
 
 interface MoviesListClickListener {
-    fun onMovieSelected()
+    fun onMovieSelected(movie: MovieData)
 }
