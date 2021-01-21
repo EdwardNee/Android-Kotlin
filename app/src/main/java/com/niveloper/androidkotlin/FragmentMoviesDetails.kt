@@ -69,8 +69,10 @@ class FragmentMoviesDetails : Fragment() {
 
 
     companion object {
-        fun newInstance(movie: MovieData) {
-            bundleOf(setA)
+        private const val PARAM_MOVIE_DATA = "movie_data"
+        fun newInstance(movie: MovieData) = FragmentMoviesDetails().apply {
+            val arg = bundleOf(Pair(PARAM_MOVIE_DATA, movie))
+            arguments = arg
         }
     }
 }
