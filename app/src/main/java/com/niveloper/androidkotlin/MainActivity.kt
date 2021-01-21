@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
             toMoviesList()
     }
 
-    override fun onMovieSelected() {
-        toMovieDetails()
+    override fun onMovieSelected(movie: MovieData) {
+        toMovieDetails(movie)
     }
 
     override fun onMovieDeselected() {
@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
     /**
      * Function adds a fragment movie details to fragment_container
      */
-    private fun toMovieDetails() {
+    private fun toMovieDetails(movie: MovieData) {
         supportFragmentManager.beginTransaction().apply {
             add(
                 R.id.fragment_container_main,
-                FragmentMoviesDetails(),
+                FragmentMoviesDetails(movie),
                 FragmentMoviesDetails::class.java.simpleName
             )
                 .addToBackStack("trans:${FragmentMoviesDetails::class.java.simpleName}")
