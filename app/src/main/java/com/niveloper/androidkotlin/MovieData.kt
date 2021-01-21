@@ -1,6 +1,7 @@
 package com.niveloper.androidkotlin
 
 import androidx.annotation.DrawableRes
+import java.io.Serializable
 
 data class MovieData(
     val name: String,
@@ -15,4 +16,4 @@ data class MovieData(
     val reviewsCnt: Int,
     val time: Int,
     val cast: Array<ActorData>
-)
+) : Serializable
