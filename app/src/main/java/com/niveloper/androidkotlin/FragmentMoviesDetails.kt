@@ -38,8 +38,11 @@ class FragmentMoviesDetails : Fragment() {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             this.adapter = adapter
-
             adapter.submitList(movie.cast)
+        }
+
+        view.findViewById<View>(R.id.back_text).setOnClickListener {
+            listener?.onMovieDeselected()
         }
     }
 
@@ -49,12 +52,12 @@ class FragmentMoviesDetails : Fragment() {
             listener = context
     }
 
-    override fun onStart() {
-        super.onStart()
-        view!!.findViewById<View>(R.id.back_text).setOnClickListener {
-            listener?.onMovieDeselected()
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        view!!.findViewById<View>(R.id.back_text).setOnClickListener {
+//            listener?.onMovieDeselected()
+//        }
+//    }
 
     override fun onDetach() {
         listener = null
