@@ -38,10 +38,10 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
         movieImg.setImageResource(item.logo)
         movieName.text = item.name
-        movieAging.text = "13"//itemView.context.getString(item.aging)
+        movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
         movieGenre.text = item.genre
-        movieReviews.text = "tt2"//itemView.context.getString(item.reviewsCnt)
-        movieDuration.text = "133"//itemView.context.getString(item.time)
+        movieReviews.text = itemView.context.getString(R.string.reviews_string, item.reviewsCnt)
+        movieDuration.text = itemView.context.getString(R.string._137_min_duration, item.time)
         movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
         movieRating.rating = item.rating
 

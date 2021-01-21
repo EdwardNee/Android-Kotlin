@@ -3,8 +3,8 @@
     <string name="back">Back</string>
     <string name="movie_name">Avengers: End Game</string>
     <string name="genre_string">Action, Adventure, Fantasy</string>
-    <string name="aging_string">13+</string>
-    <string name="reviews_string">125 REVIEWS</string>
+    <string name="aging_string">%d+</string>
+    <string name="reviews_string">%d REVIEWS</string>
     <string name="storyline">Storyline</string>
     <string name="Story_talk">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
     <string name="cast">Cast</string>
@@ -15,5 +15,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movies_list">Movies list</string>
-    <string name="_137_min_duration">137 MIN</string>
+    <string name="_137_min_duration">%d MIN</string>
 </resources>
