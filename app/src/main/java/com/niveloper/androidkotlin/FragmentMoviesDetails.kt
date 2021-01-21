@@ -68,13 +68,13 @@ class FragmentMoviesDetails : Fragment() {
      * Метод для отрисовки нужных данных при клике на нужную панель с фильмом.
      */
     private fun initMovieData(movie: MovieData) {
-        view!!.findViewById<TextView>(R.id.movie_naming).text = movie.name
-        view!!.findViewById<ImageView>(R.id.movie_img).setImageResource(movie.logo)
-        view!!.findViewById<TextView>(R.id.movie_aging).text = getString(movie.aging)
-        view!!.findViewById<TextView>(R.id.storyline).text = movie.storyLine
-        view!!.findViewById<TextView>(R.id.genre_movie).text = movie.genre
-        view!!.findViewById<TextView>(R.id.reviews_movie).text = movie.genre
-        view!!.findViewById<RatingBar>(R.id.ratingBar_movie).numStars = movie.rating
+        view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.name
+        view?.findViewById<ImageView>(R.id.movie_img)?.setImageResource(movie.logo)
+        view?.findViewById<TextView>(R.id.movie_aging)?.text = getString(movie.aging)
+        view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
+        view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genre
+        view?.findViewById<TextView>(R.id.reviews_movie)?.text = movie.genre
+        view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.numStars = movie.rating
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
