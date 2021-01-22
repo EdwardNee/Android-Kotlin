@@ -40,8 +40,8 @@ class FragmentMoviesList : Fragment() {
             layoutManager = GridLayoutManager(context, 2)
             //Instantiate adapter for recycler
             val adapter = AdapterMoviesList { movieData -> listener?.onMovieSelected(movieData) }
-            this.adapter = adapter
             addItemDecoration(CharacterItemDecoration(50))
+            this.adapter = adapter
 
 
             adapter.submitList(DataStorage.getListOfMovies())

@@ -40,8 +40,8 @@ class FragmentMoviesDetails : Fragment() {
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
+            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             this.adapter = adapter
-
             adapter.submitList(movie.cast)
         }
 
