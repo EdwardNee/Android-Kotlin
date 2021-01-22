@@ -118,10 +118,12 @@ class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecora
         val layoutParams: GridLayoutManager.LayoutParams =
             view.layoutParams as GridLayoutManager.LayoutParams
         if (layoutParams.spanIndex % 2 == 0) {
+            outRect.top = offset
             outRect.left = offset
             outRect.right = offset / 2
         }
         else{
+            outRect.top = offset
             outRect.right = offset
             outRect.left = offset / 2
         }
