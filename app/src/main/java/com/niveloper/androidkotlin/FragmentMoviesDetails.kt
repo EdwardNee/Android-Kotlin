@@ -41,7 +41,7 @@ class FragmentMoviesDetails : Fragment() {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             this.adapter = adapter
-            addItemDecoration(CharacterItemDecoration(50))
+
             adapter.submitList(movie.cast)
         }
 
@@ -107,25 +107,3 @@ interface MovieDetailsBackClickListener {
     fun onMovieDeselected()
 }
 
-class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(
-        outRect: Rect,
-        view: View,
-        parent: RecyclerView,
-        state: RecyclerView.State
-    ) {
-        super.getItemOffsets(outRect, view, parent, state)
-        val layoutParams: GridLayoutManager.LayoutParams =
-            view.layoutParams as GridLayoutManager.LayoutParams
-        if (layoutParams.spanIndex % 2 == 0) {
-            outRect.top = offset
-            outRect.left = offset
-            outRect.right = offset / 2
-        }
-        else{
-            outRect.top = offset
-            outRect.right = offset
-            outRect.left = offset / 2
-        }
-    }
-}
