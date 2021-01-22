@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     tools:context=".MovieDetailsActivity">
 
     <!--ORIG image (UPPER)-->
     <ImageView
         android:id="@+id/orig"
-        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/orig"
         app:layout_constraintBottom_toTopOf="@id/orig_GL"
@@ -20,12 +25,12 @@
 
     <!--BACK BTTN-->
     <TextView
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/back_arr"
         android:id="@+id/back_text"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:drawableStart="@drawable/back_arr"
-        android:drawablePadding="8dp"
+        android:layout_width="wrap_content"
         android:text="@string/back"
         android:textColor="@color/white"
         android:textSize="12sp"
@@ -36,8 +41,8 @@
     <!--BG image-->
     <ImageView
         android:id="@+id/BG"
-        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_width="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,11 +52,11 @@
 
     <!--AVENGERS-->
     <TextView
-        android:id="@+id/movie_naming"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
         android:autoSizeTextType="uniform"
         android:breakStrategy="balanced"
+        android:id="@+id/movie_naming"
+        android:layout_height="wrap_content"
+        android:layout_width="200dp"
         android:lines="2"
         android:text="@string/movie_name"
         android:textColor="#ECECEC"
@@ -63,8 +68,8 @@
     <!--GENRE-->
     <TextView
         android:id="@+id/genre_movie"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:text="@string/genre_string"
         android:textColor="#FF3466"
         android:textSize="14sp"
@@ -74,19 +79,19 @@
 
     <ImageView
         android:id="@+id/rect"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
         android:src="@drawable/r_rectangle"
         app:layout_constraintBottom_toTopOf="@id/orig_GL"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/movie_aging"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
+        android:layout_width="wrap_content"
         android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         android:text="@string/aging_string"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
@@ -96,10 +101,10 @@
 
     <!--STARS-->
     <RatingBar
-        android:id="@+id/ratingBar_movie"
         style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="wrap_content"
+        android:id="@+id/ratingBar_movie"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:numStars="5"
         android:rating="4"
         android:theme="@style/MyRatingBar"
@@ -108,9 +113,9 @@
 
     <TextView
         android:id="@+id/reviews_movie"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
         android:text="@string/reviews_string"
         android:textColor="#6D6D80"
         android:textSize="12sp"
@@ -119,9 +124,9 @@
 
     <TextView
         android:id="@+id/storyline_txt"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_width="wrap_content"
         android:text="@string/storyline"
         android:textColor="#ECECEC"
         android:textSize="14sp"
@@ -130,11 +135,11 @@
         app:layout_constraintTop_toBottomOf="@id/ratingBar_movie" />
 
     <TextView
-        android:id="@+id/storyline_movie"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:alpha="0.75"
         android:gravity="center_vertical"
+        android:id="@+id/storyline_movie"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
         android:letterSpacing="0.04"
         android:lineSpacingExtra="4sp"
         android:paddingTop="10dp"
@@ -148,10 +153,10 @@
     <!--CAST TEXT-->
     <TextView
         android:id="@+id/cast"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
         android:lineSpacingExtra="8sp"
         android:paddingBottom="4dp"
         android:text="@string/cast"
@@ -278,46 +283,46 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_actors"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toStartOf="@id/root_right_VGL"
         app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toBottomOf="@id/cast"/>
-
+        app:layout_constraintTop_toBottomOf="@id/cast" />
 
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/orig_GL"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_GL"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/root_left_VGL"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/root_right_VGL"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/center_VGL"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="197dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
