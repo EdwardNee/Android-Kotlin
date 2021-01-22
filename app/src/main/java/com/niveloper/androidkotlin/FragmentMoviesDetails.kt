@@ -38,7 +38,7 @@ class FragmentMoviesDetails : Fragment() {
         val movie = arguments?.getSerializable(PARAM_MOVIE_DATA) as? MovieData ?: return
         initMovieData(movie)
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
-            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            layoutManager = GridLayoutManager(context, 4) //LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             this.adapter = adapter
