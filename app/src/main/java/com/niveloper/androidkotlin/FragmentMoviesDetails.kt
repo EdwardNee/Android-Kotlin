@@ -2,6 +2,7 @@ package com.niveloper.androidkotlin
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -38,6 +41,7 @@ class FragmentMoviesDetails : Fragment() {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             this.adapter = adapter
+            addItemDecoration(DividerItemDecoration(context, RecyclerView.HORIZONTAL))
             adapter.submitList(movie.cast)
         }
 
@@ -70,10 +74,12 @@ class FragmentMoviesDetails : Fragment() {
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.name
         view?.findViewById<ImageView>(R.id.movie_img)?.setImageResource(movie.logo)
-        view?.findViewById<TextView>(R.id.movie_aging)?.text = getString(R.string.aging_string, movie.aging)
+        view?.findViewById<TextView>(R.id.movie_aging)?.text =
+            getString(R.string.aging_string, movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
         view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genre
-        view?.findViewById<TextView>(R.id.reviews_movie)?.text = getString(R.string.reviews_string, movie.reviewsCnt)
+        view?.findViewById<TextView>(R.id.reviews_movie)?.text =
+            getString(R.string.reviews_string, movie.reviewsCnt)
         view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -99,4 +105,25 @@ class FragmentMoviesDetails : Fragment() {
 
 interface MovieDetailsBackClickListener {
     fun onMovieDeselected()
+}
+
+class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        super.getItemOffsets(outRect, view, parent, state)
+        val layoutParams: GridLayoutManager.LayoutParams =
+            view.layoutParams as GridLayoutManager.LayoutParams
+        if (layoutParams.spanIndex % 2 == 0) {
+            outRect.left = offset
+            outRect.right = offset / 2
+        }
+        else{
+            outRect.right = offset
+            outRect.left = offset / 2
+        }
+    }
 }
