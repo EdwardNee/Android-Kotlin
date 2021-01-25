@@ -13,6 +13,7 @@ import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
 
@@ -72,11 +73,11 @@ class FragmentMoviesDetails : Fragment() {
      */
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.title
-        view?.findViewById<ImageView>(R.id.movie_img)?.setImageResource(movie.logo)
+        view?.findViewById<ImageView>(R.id.movie_img)?.load(movie.logoUrl)
         view?.findViewById<TextView>(R.id.movie_aging)?.text =
             getString(R.string.aging_string, movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
-        view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genre
+        view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genres.joinToString { it.name }
         view?.findViewById<TextView>(R.id.reviews_movie)?.text =
             getString(R.string.reviews_string, movie.reviewsCnt)
         view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
