@@ -1,9 +1,9 @@
 package com.niveloper.androidkotlin.datastore
 
-import androidx.annotation.DrawableRes
+import java.io.Serializable
 
 data class ActorData(
     val name: String,
     val id: Int,
-    @DrawableRes val logo: Int,
-)
+    val imageUrl: String,
+) : Serializable

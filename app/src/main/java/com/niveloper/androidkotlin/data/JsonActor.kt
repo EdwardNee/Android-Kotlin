@@ -1,4 +1,4 @@
-package com.android.academy.fundamentals.homework.features.data
+package com.niveloper.androidkotlin.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
