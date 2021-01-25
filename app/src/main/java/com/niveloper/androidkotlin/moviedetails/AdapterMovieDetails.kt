@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.ActorData
 
@@ -29,7 +30,7 @@ class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val actorName: TextView = view.findViewById(R.id.actor_name)
 
     fun onBind(item: ActorData) {
-        actorImg.setImageResource(item.logo)
+        actorImg.load(item.imageUrl)
         actorName.text = item.name
     }
 }
