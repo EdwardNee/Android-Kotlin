@@ -1,4 +1,6 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.data
+
+import com.niveloper.androidkotlin.R
 
 object DataStorage {
     fun getListOfMovies(): List<MovieData> =

@@ -1,6 +1,5 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.movielist
 
-import android.media.Rating
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.niveloper.androidkotlin.R
+import com.niveloper.androidkotlin.data.MovieData
 
 class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) :
     ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {

@@ -2,8 +2,11 @@ package com.niveloper.androidkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.FrameLayout
+import com.niveloper.androidkotlin.data.MovieData
+import com.niveloper.androidkotlin.moviedetails.FragmentMoviesDetails
+import com.niveloper.androidkotlin.moviedetails.MovieDetailsBackClickListener
+import com.niveloper.androidkotlin.movielist.FragmentMoviesList
+import com.niveloper.androidkotlin.movielist.MoviesListClickListener
 
 class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsBackClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {

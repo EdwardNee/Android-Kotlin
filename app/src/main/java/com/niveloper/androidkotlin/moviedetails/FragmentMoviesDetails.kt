@@ -1,8 +1,6 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.moviedetails
 
 import android.content.Context
-import android.content.Intent
-import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,8 +12,9 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.niveloper.androidkotlin.R
+import com.niveloper.androidkotlin.data.MovieData
 
 /**
  * A simple [Fragment] subclass.

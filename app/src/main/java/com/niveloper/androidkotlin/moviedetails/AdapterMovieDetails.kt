@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.moviedetails
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.niveloper.androidkotlin.R
+import com.niveloper.androidkotlin.data.ActorData
 
 class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {

@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.movielist
 
 import android.content.Context
 import android.graphics.Rect
@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.niveloper.androidkotlin.R
+import com.niveloper.androidkotlin.data.DataStorage
+import com.niveloper.androidkotlin.data.MovieData
 
 
 /**

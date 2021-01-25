@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin
+package com.niveloper.androidkotlin.data
 
 import androidx.annotation.DrawableRes
 
