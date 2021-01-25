@@ -38,7 +38,7 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
         movieImg.setImageResource(item.logo)
-        movieName.text = item.name
+        movieName.text = item.title
         movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
         movieGenre.text = item.genre
         movieReviews.text = itemView.context.getString(R.string.reviews_string, item.reviewsCnt)
@@ -55,7 +55,7 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
  */
 class MovieDiffCallback : DiffUtil.ItemCallback<MovieData>() {
     override fun areItemsTheSame(oldItem: MovieData, newItem: MovieData): Boolean {
-        return oldItem.name == newItem.name
+        return oldItem.title == newItem.title
     }
 
     override fun areContentsTheSame(oldItem: MovieData, newItem: MovieData): Boolean {

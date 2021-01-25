@@ -71,7 +71,7 @@ class FragmentMoviesDetails : Fragment() {
      * Метод для отрисовки нужных данных при клике на нужную панель с фильмом.
      */
     private fun initMovieData(movie: MovieData) {
-        view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.name
+        view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.title
         view?.findViewById<ImageView>(R.id.movie_img)?.setImageResource(movie.logo)
         view?.findViewById<TextView>(R.id.movie_aging)?.text =
             getString(R.string.aging_string, movie.aging)

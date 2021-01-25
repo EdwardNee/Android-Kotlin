@@ -3,7 +3,7 @@ package com.niveloper.androidkotlin.datastore
 import java.io.Serializable
 
 data class MovieData(
-    val name: String,
+    val title: String,
     val id: Int,
     val logoUrl: String,
     val bgUrl: String,
