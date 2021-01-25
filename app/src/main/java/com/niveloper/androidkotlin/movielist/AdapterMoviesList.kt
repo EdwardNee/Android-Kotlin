@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
 
@@ -37,10 +38,10 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val movieRating: RatingBar = view.findViewById(R.id.ratingBar_movie)
 
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
-        movieImg.setImageResource(item.logo)
+        movieImg.load(item.logoUrl)
         movieName.text = item.title
         movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
-        movieGenre.text = item.genre
+        movieGenre.text = item.genres.joinToString { it.name }
         movieReviews.text = itemView.context.getString(R.string.reviews_string, item.reviewsCnt)
         movieDuration.text = itemView.context.getString(R.string._137_min_duration, item.time)
         movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
