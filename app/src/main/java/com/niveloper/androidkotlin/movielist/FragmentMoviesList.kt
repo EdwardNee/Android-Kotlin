@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.DataStorage
-import com.niveloper.androidkotlin.data.MovieData
+import com.niveloper.androidkotlin.datastore.DataStorage
+import com.niveloper.androidkotlin.datastore.MovieData
 
 
 /**

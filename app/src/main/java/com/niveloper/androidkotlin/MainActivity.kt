@@ -2,7 +2,7 @@ package com.niveloper.androidkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.niveloper.androidkotlin.data.MovieData
+import com.niveloper.androidkotlin.datastore.MovieData
 import com.niveloper.androidkotlin.moviedetails.FragmentMoviesDetails
 import com.niveloper.androidkotlin.moviedetails.MovieDetailsBackClickListener
 import com.niveloper.androidkotlin.movielist.FragmentMoviesList

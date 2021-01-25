@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.MovieData
+import com.niveloper.androidkotlin.datastore.MovieData
 
 /**
  * A simple [Fragment] subclass.

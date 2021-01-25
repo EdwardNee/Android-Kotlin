@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.MovieData
+import com.niveloper.androidkotlin.datastore.MovieData
 
 class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) :
     ListAdapter<MovieData, MovieViewHolder>(MovieDiffCallback()) {

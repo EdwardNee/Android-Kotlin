@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.data
+package com.niveloper.androidkotlin.datastore
 
 import com.niveloper.androidkotlin.R
 

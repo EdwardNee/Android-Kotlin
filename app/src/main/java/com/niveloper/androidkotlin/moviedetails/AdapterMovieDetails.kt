@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.ActorData
+import com.niveloper.androidkotlin.datastore.ActorData
 
 class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorViewHolder {
