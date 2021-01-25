@@ -1,13 +1,12 @@
 package com.niveloper.androidkotlin.datastore
 
-import androidx.annotation.DrawableRes
 import java.io.Serializable
 
 data class MovieData(
     val name: String,
     val id: Int,
-    @DrawableRes val logo: Int,
-    @DrawableRes val bg: Int,
+    val logoUrl: String,
+    val bgUrl: String,
     val aging: Int,
     val storyLine: String,
     val isLiked: Boolean,
