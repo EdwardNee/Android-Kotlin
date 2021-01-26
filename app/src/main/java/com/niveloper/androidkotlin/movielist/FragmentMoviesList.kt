@@ -65,10 +65,13 @@ class FragmentMoviesList : Fragment() {
      * Загружает вне главного потока данные о фильме в адаптер.
      */
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
-        CoroutineScope(Dispatchers.Default).launch {
-                val moviesL = loadMovies(requireContext())
-                adapter.submitList(moviesL)
-                //adapter.bindData(moviesL)
+        lifecycleScope.launch {
+            val moviesData = movies ?: loadMovies(requireContext())
+
+            withContext(Dispatchers.Main) {
+                movies = moviesData
+                adapter.submitList(moviesData)
+            }
         }
     }
 }
