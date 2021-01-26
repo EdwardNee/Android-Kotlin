@@ -7,12 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.data.loadMovies
-import
 import com.niveloper.androidkotlin.datastore.MovieData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.withContext
 
 
 /**
@@ -59,6 +62,7 @@ class FragmentMoviesList : Fragment() {
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
         lifecycleScope
         loadMovies(requireContext())
+
         adapter.submitList()
     }
 }
