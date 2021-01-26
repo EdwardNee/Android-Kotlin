@@ -47,7 +47,7 @@ class FragmentMoviesList : Fragment() {
             layoutManager = GridLayoutManager(context, 2)
             //Instantiate adapter for recycler
             val adapter = AdapterMoviesList { movieData -> listener?.onMovieSelected(movieData) }
-            addItemDecoration(CharacterItemDecoration(50))
+            //addItemDecoration(CharacterItemDecoration(50))
             this.adapter = adapter
 
             //adapter.submitList(DataStorage.getListOfMovies())
@@ -64,16 +64,15 @@ class FragmentMoviesList : Fragment() {
      * Загружает вне главного потока данные о фильме в адаптер.
      */
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
-        lifecycleScope.launch{
-            //Если там не нул, то можно взять их.
-            val movieData = movies ?: loadMovies(requireContext())
-            withContext(Dispatchers.Main){
-                movies = movieData
-                adapter.submitList(movies)
+        lifecycleScope.launch {
+            val moviesData = movies ?: loadMovies(requireContext())
+
+            withContext(Dispatchers.IO) {
+                movies = moviesData
+                //adapter.submitList(moviesData)
+                adapter.bindData(moviesData)
             }
         }
-
-
     }
 }
 
