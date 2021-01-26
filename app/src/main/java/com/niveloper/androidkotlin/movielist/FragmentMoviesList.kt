@@ -7,14 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.data.loadMovies
 import com.niveloper.androidkotlin.datastore.MovieData
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
@@ -25,6 +25,7 @@ import kotlinx.coroutines.withContext
  */
 class FragmentMoviesList : Fragment() {
     var listener: MoviesListClickListener? = null
+    var movies: List<MovieData>? = null
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is MoviesListClickListener)
@@ -59,11 +60,20 @@ class FragmentMoviesList : Fragment() {
         super.onDetach()
     }
 
+    /**
+     * Загружает вне главного потока данные о фильме в адаптер.
+     */
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
-        lifecycleScope
-        loadMovies(requireContext())
+        lifecycleScope.launch{
+            //Если там не нул, то можно взять их.
+            val movieData = movies ?: loadMovies(requireContext())
+            withContext(Dispatchers.Main){
+                movies = movieData
+                adapter.submitList(movies)
+            }
+        }
 
-        adapter.submitList()
+
     }
 }
 
