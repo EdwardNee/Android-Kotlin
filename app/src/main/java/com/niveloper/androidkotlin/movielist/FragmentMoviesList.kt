@@ -10,7 +10,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.datastore.DataStorage
+import com.niveloper.androidkotlin.data.loadMovies
+import
 import com.niveloper.androidkotlin.datastore.MovieData
 
 
@@ -45,22 +46,20 @@ class FragmentMoviesList : Fragment() {
             addItemDecoration(CharacterItemDecoration(50))
             this.adapter = adapter
 
-
-            adapter.submitList(DataStorage.getListOfMovies())
+            //adapter.submitList(DataStorage.getListOfMovies())
+            loadDataToAdapter(adapter)
         }
-
     }
-
-//    override fun onStart() {
-//        super.onStart()
-//        view!!.findViewById<View>(R.id.avengers_framelayout).setOnClickListener {
-//            listener?.onMovieSelected()
-//        }
-//    }
 
     override fun onDetach() {
         listener = null
         super.onDetach()
+    }
+
+    private fun loadDataToAdapter(adapter : AdapterMoviesList){
+        lifecycleScope
+        loadMovies(requireContext())
+        adapter.submitList()
     }
 }
 
