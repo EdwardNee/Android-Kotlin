@@ -25,11 +25,6 @@ class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) :
         val item = getItem(position)
         holder.onBind(item, onClickCard)
     }
-
-    fun bindData(movies: List<MovieData>){
-        this.onCurrentListChanged(this.currentList, movies)
-        notifyDataSetChanged()
-    }
 }
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {

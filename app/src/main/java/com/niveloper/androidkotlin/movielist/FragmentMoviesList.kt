@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.data.loadMovies
 import com.niveloper.androidkotlin.datastore.MovieData
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -64,14 +65,10 @@ class FragmentMoviesList : Fragment() {
      * Загружает вне главного потока данные о фильме в адаптер.
      */
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
-        lifecycleScope.launch {
-            val moviesData = movies ?: loadMovies(requireContext())
-
-            withContext(Dispatchers.IO) {
-                movies = moviesData
-                //adapter.submitList(moviesData)
-                adapter.bindData(moviesData)
-            }
+        CoroutineScope(Dispatchers.Default).launch {
+                val moviesL = loadMovies(requireContext())
+                adapter.submitList(moviesL)
+                //adapter.bindData(moviesL)
         }
     }
 }
