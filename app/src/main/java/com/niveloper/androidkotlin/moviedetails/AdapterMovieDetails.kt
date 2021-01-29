@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.features.moviedetails
+package com.niveloper.androidkotlin.moviedetails
 
 import android.view.LayoutInflater
 import android.view.View

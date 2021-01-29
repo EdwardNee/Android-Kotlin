@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.features.movielist
+package com.niveloper.androidkotlin.movielist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
@@ -67,5 +66,4 @@ class MovieDiffCallback : DiffUtil.ItemCallback<MovieData>() {
     override fun areContentsTheSame(oldItem: MovieData, newItem: MovieData): Boolean {
         return oldItem == newItem
     }
-
 }

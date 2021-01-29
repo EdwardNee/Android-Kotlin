@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.features.data
+package com.niveloper.androidkotlin.data
 
 import android.content.Context
 import com.niveloper.androidkotlin.datastore.ActorData
