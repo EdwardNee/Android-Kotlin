@@ -1,9 +1,13 @@
-package com.android.academy.fundamentals.homework.features.data
+package com.niveloper.androidkotlin.features.data
 
 import android.content.Context
-import com.android.academy.fundamentals.homework.model.Actor
-import com.android.academy.fundamentals.homework.model.Genre
-import com.android.academy.fundamentals.homework.model.Movie
+import com.android.academy.fundamentals.homework.features.data.JsonActor
+import com.android.academy.fundamentals.homework.features.data.JsonGenre
+import com.android.academy.fundamentals.homework.features.data.JsonMovie
+import com.niveloper.androidkotlin.datastore.ActorData
+import com.niveloper.androidkotlin.datastore.GenreData
+import com.niveloper.androidkotlin.datastore.MovieData
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
@@ -12,7 +16,7 @@ import kotlinx.serialization.json.Json
 private val jsonFormat = Json { ignoreUnknownKeys = true }
 
 @Suppress("unused")
-internal suspend fun loadMovies(context: Context): List<Movie> = withContext(Dispatchers.IO) {
+internal suspend fun loadMovies(context: Context): List<MovieData> = withContext(Dispatchers.IO) {
     val genresMap = loadGenres(context)
     val actorsMap = loadActors(context)
 
@@ -20,7 +24,7 @@ internal suspend fun loadMovies(context: Context): List<Movie> = withContext(Dis
     parseMovies(data, genresMap, actorsMap)
 }
 
-private suspend fun loadGenres(context: Context): List<Genre> = withContext(Dispatchers.IO) {
+private suspend fun loadGenres(context: Context): List<GenreData> = withContext(Dispatchers.IO) {
     val data = readAssetFileToString(context, "genres.json")
     parseGenres(data)
 }
@@ -30,20 +34,20 @@ private fun readAssetFileToString(context: Context, fileName: String): String {
     return stream.bufferedReader().readText()
 }
 
-internal fun parseGenres(jsonString: String): List<Genre> {
+internal fun parseGenres(jsonString: String): List<GenreData> {
     val jsonGenres = jsonFormat.decodeFromString<List<JsonGenre>>(jsonString)
-    return jsonGenres.map { jsonGenre -> Genre(id = jsonGenre.id, name = jsonGenre.name) }
+    return jsonGenres.map { jsonGenre -> GenreData(id = jsonGenre.id, name = jsonGenre.name) }
 }
 
-private suspend fun loadActors(context: Context): List<Actor> = withContext(Dispatchers.IO) {
+private suspend fun loadActors(context: Context): List<ActorData> = withContext(Dispatchers.IO) {
     val data = readAssetFileToString(context, "people.json")
     parseActors(data)
 }
 
-internal fun parseActors(jsonString: String): List<Actor> {
+internal fun parseActors(jsonString: String): List<ActorData> {
     val jsonActors = jsonFormat.decodeFromString<List<JsonActor>>(jsonString)
     return jsonActors.map { jsonActor ->
-        Actor(
+        ActorData(
             id = jsonActor.id,
             name = jsonActor.name,
             imageUrl = jsonActor.profilePicture
@@ -53,30 +57,30 @@ internal fun parseActors(jsonString: String): List<Actor> {
 
 internal fun parseMovies(
     jsonString: String,
-    genreData: List<Genre>,
-    actors: List<Actor>
-): List<Movie> {
-    val genresMap = genreData.associateBy(Genre::id)
-    val actorsMap = actors.associateBy(Actor::id)
+    genreData: List<GenreData>,
+    actors: List<ActorData>
+): List<MovieData> {
+    val genresMap = genreData.associateBy(GenreData::id)
+    val actorsMap = actors.associateBy(ActorData::id)
 
     val jsonMovies = jsonFormat.decodeFromString<List<JsonMovie>>(jsonString)
 
     return jsonMovies.map { jsonMovie ->
         @Suppress("unused")
-        Movie(
+        MovieData(
             id = jsonMovie.id,
             title = jsonMovie.title,
             storyLine = jsonMovie.overview,
-            imageUrl = jsonMovie.posterPicture,
-            detailImageUrl = jsonMovie.backdropPicture,
-            rating = (jsonMovie.ratings / 2).toInt(),
-            reviewCount = jsonMovie.votesCount,
-            pgAge = if (jsonMovie.adult) 16 else 13,
-            runningTime = jsonMovie.runtime,
+            logoUrl = jsonMovie.posterPicture,
+            bgUrl = jsonMovie.backdropPicture,
+            rating = (jsonMovie.ratings / 2).toInt().toFloat(),
+            reviewsCnt = jsonMovie.votesCount,
+            aging = if (jsonMovie.adult) 16 else 13,
+            time = jsonMovie.runtime,
             genres = jsonMovie.genreIds.map { id ->
                 genresMap[id].orThrow { IllegalArgumentException("Genre not found") }
             },
-            actors = jsonMovie.actors.map { id ->
+            cast = jsonMovie.actors.map { id ->
                 actorsMap[id].orThrow { IllegalArgumentException("Actor not found") }
             },
             isLiked = false
