@@ -38,7 +38,6 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val movieRating: RatingBar = itemView.findViewById(R.id.ratingBar_movie)
 
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
-        println("\n THAT IS LOGO ${item.logoUrl}\n")
         movieImage.load(item.logoUrl)
         movieName.text = item.title
         movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
