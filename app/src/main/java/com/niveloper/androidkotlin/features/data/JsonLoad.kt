@@ -1,9 +1,6 @@
 package com.niveloper.androidkotlin.features.data
 
 import android.content.Context
-import com.android.academy.fundamentals.homework.features.data.JsonActor
-import com.android.academy.fundamentals.homework.features.data.JsonGenre
-import com.android.academy.fundamentals.homework.features.data.JsonMovie
 import com.niveloper.androidkotlin.datastore.ActorData
 import com.niveloper.androidkotlin.datastore.GenreData
 import com.niveloper.androidkotlin.datastore.MovieData
