@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.movielist
+package com.niveloper.androidkotlin.features.movielist
 
 import android.content.Context
 import android.graphics.Rect
@@ -11,9 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.loadMovies
+import com.niveloper.androidkotlin.features.data.loadMovies
 import com.niveloper.androidkotlin.datastore.MovieData
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

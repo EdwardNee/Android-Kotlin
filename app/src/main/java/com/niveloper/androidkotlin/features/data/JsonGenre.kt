@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.data
+package com.niveloper.androidkotlin.features.data
 
 import kotlinx.serialization.Serializable
 

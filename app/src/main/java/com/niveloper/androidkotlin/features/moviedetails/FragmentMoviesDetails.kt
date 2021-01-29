@@ -1,4 +1,4 @@
-package com.niveloper.androidkotlin.moviedetails
+package com.niveloper.androidkotlin.features.moviedetails
 
 import android.content.Context
 import android.os.Bundle
