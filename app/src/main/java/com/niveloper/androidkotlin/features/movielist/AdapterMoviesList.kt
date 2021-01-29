@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
 
@@ -40,11 +41,14 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
 //        movieImage.load(item.logoUrl)
         movieName.text = item.title
-        Glide.with()
-        movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
+        val context = itemView.context
+        Glide.with(context)
+            .load(item.title)
+            .into(movieImage)
+        movieAging.text = context.getString(R.string.aging_string, item.aging)
         movieGenre.text = item.genres.joinToString { it.name }
-        movieReviews.text = itemView.context.getString(R.string.reviews_string, item.reviewsCnt)
-        movieDuration.text = itemView.context.getString(R.string._137_min_duration, item.time)
+        movieReviews.text = context.getString(R.string.reviews_string, item.reviewsCnt)
+        movieDuration.text = context.getString(R.string._137_min_duration, item.time)
         movieLiked.setImageResource(if (item.isLiked) R.drawable.like else R.drawable.dislike)
         movieRating.rating = item.rating
 
