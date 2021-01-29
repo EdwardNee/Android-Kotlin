@@ -4,7 +4,6 @@ import android.content.Context
 import com.niveloper.androidkotlin.datastore.ActorData
 import com.niveloper.androidkotlin.datastore.GenreData
 import com.niveloper.androidkotlin.datastore.MovieData
-
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString

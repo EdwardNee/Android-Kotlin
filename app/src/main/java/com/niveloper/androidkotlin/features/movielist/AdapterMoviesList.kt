@@ -27,18 +27,19 @@ class AdapterMoviesList(private val onClickCard: (item: MovieData) -> Unit) :
     }
 }
 
-class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val movieName: TextView = view.findViewById(R.id.movie_naming)
-    private val movieAging: TextView = view.findViewById(R.id.movie_aging)
-    private val movieGenre: TextView = view.findViewById(R.id.genre_movie)
-    private val movieReviews: TextView = view.findViewById(R.id.reviews_movie)
-    private val movieDuration: TextView = view.findViewById(R.id.movie_duration)
-    private val movieLiked: ImageView = view.findViewById(R.id.reaction)
-    private val movieImg: ImageView = view.findViewById(R.id.movie_img)
-    private val movieRating: RatingBar = view.findViewById(R.id.ratingBar_movie)
+class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val movieName: TextView = itemView.findViewById(R.id.movie_naming)
+    private val movieAging: TextView = itemView.findViewById(R.id.movie_aging)
+    private val movieGenre: TextView = itemView.findViewById(R.id.genre_movie)
+    private val movieReviews: TextView = itemView.findViewById(R.id.reviews_movie)
+    private val movieDuration: TextView = itemView.findViewById(R.id.movie_duration)
+    private val movieLiked: ImageView = itemView.findViewById(R.id.reaction)
+    private val movieImage: ImageView = itemView.findViewById(R.id.movie_img)
+    private val movieRating: RatingBar = itemView.findViewById(R.id.ratingBar_movie)
 
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
-        movieImg.load(item.logoUrl)
+        println("\n THAT IS LOGO ${item.logoUrl}\n")
+        movieImage.load(item.logoUrl)
         movieName.text = item.title
         movieAging.text = itemView.context.getString(R.string.aging_string, item.aging)
         movieGenre.text = item.genres.joinToString { it.name }
