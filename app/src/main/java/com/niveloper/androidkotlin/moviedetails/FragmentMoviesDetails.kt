@@ -15,10 +15,13 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.niveloper.androidkotlin.JsonLoadRepositoryInterface
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.data.JsonLoad
 import com.niveloper.androidkotlin.datastore.MovieData
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass.
@@ -53,8 +56,22 @@ class FragmentMoviesDetails : Fragment() {
         }
 
         lifecycleScope.launch {
+            val repos = (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
+            val movie = repos.loadMovie(movieId)
 
+            withContext(Dispatchers.Main){
+                bindUI(view, movie)
+            }
         }
+    }
+
+    /**
+     * binding the data into an adapter.
+     */
+    private fun bindUI(view: View, movie: MovieData){
+        initMovieData(movie)
+        val adapter = view.findViewById<RecyclerView>(R.id.rv_movies).adapter as AdapterMovieDetails
+        adapter.submitList(movie.cast)
     }
 
     override fun onAttach(context: Context) {

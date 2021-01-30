@@ -53,6 +53,7 @@ internal class JsonLoad(private val context: Context) : JsonLoadRepository {
         return cachedMovies.find { it.id == movieId }!!
     }
 
+
     private suspend fun loadGenres(context: Context): List<GenreData> =
         withContext(Dispatchers.IO) {
             val data = readAssetFileToString(context, "genres.json")
