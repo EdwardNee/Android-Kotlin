@@ -3,30 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_movies_list"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
+    android:background="@drawable/background"
     android:clickable="true"
+    android:elevation="2dp"
     android:focusable="true"
-    android:src="@drawable/bg_fragment"
     app:layout_constrainedWidth="true">
 
     <ImageView
-        android:id="@+id/movie_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="2dp"
-        android:paddingTop="3dp"
-        android:paddingEnd="0dp"
-        android:src="@drawable/movie_fragment" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/movie_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:paddingStart="2dp"
         android:paddingTop="3dp"
-        android:paddingEnd="0dp"
-        android:src="@drawable/mask_movie_frag" />
+        android:paddingEnd="3dp"
+        android:paddingBottom="5dp"
+        android:src="@drawable/movie_fragment"
+        app:layout_constraintDimensionRatio="1:1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bg_holder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="5dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="3dp"
+        android:paddingBottom="5dp"
+        android:src="@drawable/mask_movie_frag"
+        app:layout_constraintDimensionRatio="1:1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/reviews_movie"
@@ -36,7 +56,7 @@
         android:layout_marginBottom="48dp"
         android:text="@string/reviews_string"
         android:textColor="#6D6D80"
-        android:textSize="8sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/ratingBar_movie"
         app:layout_constraintTop_toBottomOf="@id/genre" />
@@ -71,7 +91,7 @@
         android:layout_marginBottom="60dp"
         android:text="@string/genre_string"
         android:textColor="#FF3466"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/root_left_VGL"
         app:layout_constraintTop_toBottomOf="@id/avengers" />
 
@@ -79,53 +99,51 @@
         android:id="@+id/movie_naming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical|start"
         android:text="@string/movie_name"
         android:textColor="#ECECEC"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/movie_duration"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/movie_duration"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/_137_min_duration"
         android:textColor="#565665"
-        android:textSize="8sp"
-        android:textStyle="bold" />
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/reaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_gravity="end"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="6dp"
-        android:src="@drawable/like" />
-
-
-    <ImageView
-        android:id="@+id/rect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/r_rectangle" />
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/like"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/movie_aging"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/r_rectangle"
+        android:gravity="center"
         android:text="@string/aging_string"
         android:textColor="#FFFFFF"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
