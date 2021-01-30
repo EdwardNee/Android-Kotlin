@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
@@ -38,12 +39,12 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val movieRating: RatingBar = itemView.findViewById(R.id.ratingBar_movie)
 
     fun onBind(item: MovieData, onClickCard: (item: MovieData) -> Unit) {
-//        movieImage.load(item.logoUrl)
+        movieImage.load(item.logoUrl)
         movieName.text = item.title
         val context = itemView.context
-        Glide.with(context)
-            .load(item.title)
-            .into(movieImage)
+//        Glide.with(context)
+//            .load(item.title)
+//            .into(movieImage)
         movieAging.text = context.getString(R.string.aging_string, item.aging)
         movieGenre.text = item.genres.joinToString { it.name }
         movieReviews.text = context.getString(R.string.reviews_string, item.reviewsCnt)
