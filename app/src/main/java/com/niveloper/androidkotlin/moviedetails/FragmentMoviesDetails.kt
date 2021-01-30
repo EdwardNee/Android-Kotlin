@@ -10,12 +10,14 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass.
@@ -35,18 +37,22 @@ class FragmentMoviesDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Получаем данные по ключу и отрисовываем их на фрагменте.
-        val movie = arguments?.getSerializable(PARAM_MOVIE_ID) as? MovieData ?: return
-        initMovieData(movie)
+        val movieId = arguments?.getSerializable(PARAM_MOVIE_ID) as? Int ?: return
+//        initMovieData(movieId)
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             this.adapter = adapter
-            adapter.submitList(movie.cast)
+//            adapter.submitList(movieId.cast)
         }
 
         view.findViewById<View>(R.id.back_text).setOnClickListener {
             listener?.onMovieDeselected()
+        }
+
+        lifecycleScope.launch {
+            JsonLoad
         }
     }
 
