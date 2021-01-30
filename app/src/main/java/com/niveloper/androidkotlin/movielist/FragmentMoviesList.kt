@@ -10,8 +10,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.niveloper.androidkotlin.JsonLoadRepositoryInterface
 import com.niveloper.androidkotlin.R
-import com.niveloper.androidkotlin.data.loadMovies
+import com.niveloper.androidkotlin.data.JsonLoadRepository
 import com.niveloper.androidkotlin.datastore.MovieData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -65,7 +66,8 @@ class FragmentMoviesList : Fragment() {
      */
     private fun loadDataToAdapter(adapter : AdapterMoviesList){
         lifecycleScope.launch {
-            val moviesData = movies ?: loadMovies(requireContext())
+            val repos = (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
+            val moviesData = movies ?: repos.loadMovies()
 
             withContext(Dispatchers.Main) {
                 movies = moviesData
