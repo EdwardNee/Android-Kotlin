@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
+import com.niveloper.androidkotlin.data.JsonLoad
 import com.niveloper.androidkotlin.datastore.MovieData
 import kotlinx.coroutines.launch
 
@@ -52,7 +53,7 @@ class FragmentMoviesDetails : Fragment() {
         }
 
         lifecycleScope.launch {
-            JsonLoad
+
         }
     }
 

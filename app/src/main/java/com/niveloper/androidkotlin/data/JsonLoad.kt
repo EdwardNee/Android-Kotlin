@@ -9,11 +9,26 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-class JsonLoad(private val context: Context){
+interface JsonLoadRepository {
+    suspend fun loadMovies(): List<MovieData>
+    suspend fun loadMovie(movieId: Int): MovieData
+}
+
+internal class JsonLoad(private val context: Context) : JsonLoadRepository {
     private val jsonFormat = Json { ignoreUnknownKeys = true }
 
-    @Suppress("unused")
-    internal suspend fun loadMovies(context: Context): List<MovieData> = withContext(Dispatchers.IO) {
+    private var movies: List<MovieData>? = null
+
+//    @Suppress("unused")
+//    suspend fun loadMovies(context: Context): List<MovieData> = withContext(Dispatchers.IO) {
+//        val genresMap = loadGenres(context)
+//        val actorsMap = loadActors(context)
+//
+//        val data = readAssetFileToString(context, "data.json")
+//        parseMovies(data, genresMap, actorsMap)
+//    }
+
+    private suspend fun loadMoviesFromJson(): List<MovieData> = withContext(Dispatchers.IO) {
         val genresMap = loadGenres(context)
         val actorsMap = loadActors(context)
 
@@ -21,10 +36,27 @@ class JsonLoad(private val context: Context){
         parseMovies(data, genresMap, actorsMap)
     }
 
-    private suspend fun loadGenres(context: Context): List<GenreData> = withContext(Dispatchers.IO) {
-        val data = readAssetFileToString(context, "genres.json")
-        parseGenres(data)
+
+    override suspend fun loadMovies(): List<MovieData> = withContext(Dispatchers.IO) {
+        val cachedMovies = movies
+        if (cachedMovies != null) {
+            cachedMovies
+        } else {
+            val moviesFromJson = loadMoviesFromJson()
+            movies = moviesFromJson
+            moviesFromJson
+        }
     }
+
+    override suspend fun loadMovie(movieId: Int): MovieData {
+        val cachedMovies = movie
+    }
+
+    private suspend fun loadGenres(context: Context): List<GenreData> =
+        withContext(Dispatchers.IO) {
+            val data = readAssetFileToString(context, "genres.json")
+            parseGenres(data)
+        }
 
     private fun readAssetFileToString(context: Context, fileName: String): String {
         val stream = context.assets.open(fileName)
@@ -36,10 +68,11 @@ class JsonLoad(private val context: Context){
         return jsonGenres.map { jsonGenre -> GenreData(id = jsonGenre.id, name = jsonGenre.name) }
     }
 
-    private suspend fun loadActors(context: Context): List<ActorData> = withContext(Dispatchers.IO) {
-        val data = readAssetFileToString(context, "people.json")
-        parseActors(data)
-    }
+    private suspend fun loadActors(context: Context): List<ActorData> =
+        withContext(Dispatchers.IO) {
+            val data = readAssetFileToString(context, "people.json")
+            parseActors(data)
+        }
 
     internal fun parseActors(jsonString: String): List<ActorData> {
         val jsonActors = jsonFormat.decodeFromString<List<JsonActor>>(jsonString)
