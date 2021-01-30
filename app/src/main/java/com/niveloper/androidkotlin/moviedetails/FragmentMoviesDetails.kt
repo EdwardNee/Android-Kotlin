@@ -10,17 +10,12 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.os.bundleOf
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass.
@@ -40,7 +35,7 @@ class FragmentMoviesDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Получаем данные по ключу и отрисовываем их на фрагменте.
-        val movie = arguments?.getSerializable(PARAM_MOVIE_DATA) as? MovieData ?: return
+        val movie = arguments?.getSerializable(PARAM_MOVIE_ID) as? MovieData ?: return
         initMovieData(movie)
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -103,9 +98,9 @@ class FragmentMoviesDetails : Fragment() {
 
 
     companion object {
-        private const val PARAM_MOVIE_DATA = "movie_data"
-        fun newInstance(movie: MovieData) = FragmentMoviesDetails().also {
-            val arg = bundleOf(PARAM_MOVIE_DATA to movie)
+        private const val PARAM_MOVIE_ID = "movie_data_id"
+        fun newInstance(movieId: Int) = FragmentMoviesDetails().also {
+            val arg = bundleOf(PARAM_MOVIE_ID to movieId)
             it.arguments = arg
         }
     }
