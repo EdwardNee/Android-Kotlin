@@ -78,23 +78,3 @@ class FragmentMoviesList : Fragment() {
 interface MoviesListClickListener {
     fun onMovieSelected(movie: MovieData)
 }
-
-class CharacterItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(
-        outRect: Rect,
-        view: View,
-        parent: RecyclerView,
-        state: RecyclerView.State
-    ) {
-        super.getItemOffsets(outRect, view, parent, state)
-        val layoutParams: GridLayoutManager.LayoutParams =
-            view.layoutParams as GridLayoutManager.LayoutParams
-        if (layoutParams.spanIndex % 2 == 0) {
-            outRect.left = offset
-            outRect.right = offset / 2
-        } else {
-            outRect.right = offset
-            outRect.left = offset / 2
-        }
-    }
-}

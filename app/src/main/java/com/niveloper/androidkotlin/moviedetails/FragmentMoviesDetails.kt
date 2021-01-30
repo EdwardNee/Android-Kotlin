@@ -10,12 +10,17 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.MovieData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass.
@@ -38,7 +43,7 @@ class FragmentMoviesDetails : Fragment() {
         val movie = arguments?.getSerializable(PARAM_MOVIE_DATA) as? MovieData ?: return
         initMovieData(movie)
         view.findViewById<RecyclerView>(R.id.rv_actors).apply {
-            layoutManager = GridLayoutManager(context, 4) //LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             val adapter = AdapterMovieDetails()
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             this.adapter = adapter
@@ -73,7 +78,10 @@ class FragmentMoviesDetails : Fragment() {
      */
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.title
-        view?.findViewById<ImageView>(R.id.movie_img)?.load(movie.logoUrl)
+//        view?.findViewById<ImageView>(R.id.movie_img)?.load(movie.logoUrl)
+        Glide.with(requireContext())
+            .load(movie.logoUrl)
+            .into(view?.findViewById<ImageView>(R.id.movie_img)!!)
         view?.findViewById<TextView>(R.id.movie_aging)?.text =
             getString(R.string.aging_string, movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
