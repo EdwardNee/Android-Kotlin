@@ -49,7 +49,8 @@ internal class JsonLoad(private val context: Context) : JsonLoadRepository {
     }
 
     override suspend fun loadMovie(movieId: Int): MovieData {
-        val cachedMovies = movie
+        val cachedMovies = movies ?: loadMovies()
+        return cachedMovies.find { it.id == movieId }!!
     }
 
     private suspend fun loadGenres(context: Context): List<GenreData> =
