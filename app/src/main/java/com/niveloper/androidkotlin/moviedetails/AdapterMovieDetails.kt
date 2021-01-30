@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
 import com.niveloper.androidkotlin.R
 import com.niveloper.androidkotlin.datastore.ActorData
 
@@ -25,12 +25,15 @@ class AdapterMovieDetails : ListAdapter<ActorData, ActorViewHolder>(ActorDiffCal
     }
 }
 
-class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val actorImg: ImageView = view.findViewById(R.id.actor_img)
-    private val actorName: TextView = view.findViewById(R.id.actor_name)
+class ActorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val actorImg: ImageView = itemView.findViewById(R.id.actor_img)
+    private val actorName: TextView = itemView.findViewById(R.id.actor_name)
 
     fun onBind(item: ActorData) {
-        actorImg.load(item.imageUrl)
+        val context = itemView.context
+        Glide.with(context)
+            .load(item.imageUrl)
+            .into(actorImg)
         actorName.text = item.name
     }
 }
