@@ -13,21 +13,13 @@
     app:layout_constrainedWidth="true">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:src="@drawable/bg_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/movie_img"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingStart="2dp"
-        android:paddingTop="3dp"
-        android:paddingEnd="3dp"
-        android:paddingBottom="5dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingStart="1dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="1dp"
         android:src="@drawable/movie_fragment"
         app:layout_constraintDimensionRatio="1:1.5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,30 +28,29 @@
 
     <ImageView
         android:id="@+id/bg_holder"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingStart="5dp"
-        android:paddingTop="3dp"
-        android:paddingEnd="3dp"
-        android:paddingBottom="5dp"
         android:src="@drawable/mask_movie_frag"
-        app:layout_constraintDimensionRatio="1:1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/movie_img"
+        app:layout_constraintEnd_toEndOf="@id/movie_img"
+        app:layout_constraintStart_toStartOf="@id/movie_img"
+        app:layout_constraintTop_toTopOf="@id/movie_img" />
+
 
     <TextView
         android:id="@+id/reviews_movie"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="48dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/reviews_string"
         android:textColor="#6D6D80"
         android:textSize="12sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/movie_img"
         app:layout_constraintStart_toEndOf="@id/ratingBar_movie"
-        app:layout_constraintTop_toBottomOf="@id/genre" />
+        app:layout_constraintTop_toBottomOf="@id/movie_naming" />
 
 
     <RatingBar
@@ -69,7 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="42dp"
         android:isIndicator="true"
         android:max="5"
         android:numStars="5"
@@ -79,21 +69,22 @@
         android:theme="@style/MyRatingBar"
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
-        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toBottomOf="@id/genre" />
+        app:layout_constraintBottom_toBottomOf="@id/reviews_movie"
+        app:layout_constraintTop_toBottomOf="@id/genre_movie"
+        app:layout_constraintStart_toStartOf="parent"
+         />
 
     <TextView
         android:id="@+id/genre_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_margin="8dp"
         android:text="@string/genre_string"
         android:textColor="#FF3466"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/root_left_VGL"
-        app:layout_constraintTop_toBottomOf="@id/avengers" />
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@id/reviews_movie"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/movie_naming"
