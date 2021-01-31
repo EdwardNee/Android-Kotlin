@@ -56,10 +56,11 @@ class FragmentMoviesDetails : Fragment() {
         }
 
         lifecycleScope.launch {
-            val repos = (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
+            val repos =
+                (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
             val movie = repos.loadMovie(movieId)
 
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 bindUI(view, movie)
             }
         }
@@ -68,7 +69,7 @@ class FragmentMoviesDetails : Fragment() {
     /**
      * binding the data into an adapter.
      */
-    private fun bindUI(view: View, movie: MovieData){
+    private fun bindUI(view: View, movie: MovieData) {
         initMovieData(movie)
         val adapter = view.findViewById<RecyclerView>(R.id.rv_actors).adapter as AdapterMovieDetails
         adapter.submitList(movie.cast)
@@ -101,6 +102,11 @@ class FragmentMoviesDetails : Fragment() {
         view?.findViewById<ImageView>(R.id.movie_img)?.let {
             Glide.with(requireContext())
                 .load(movie.logoUrl)
+                .into(it)
+        }
+        view?.findViewById<ImageView>(R.id.orig)?.let {
+            Glide.with(requireContext())
+                .load(movie.bgUrl)
                 .into(it)
         }
         view?.findViewById<TextView>(R.id.movie_aging)?.text =
