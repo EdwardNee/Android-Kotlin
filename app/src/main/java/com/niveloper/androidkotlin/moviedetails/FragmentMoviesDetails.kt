@@ -98,6 +98,14 @@ class FragmentMoviesDetails : Fragment() {
      */
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.title
+        view?.findViewById<TextView>(R.id.movie_aging)?.text =
+            getString(R.string.aging_string, movie.aging)
+        view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
+        view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genres.joinToString { it.name }
+        view?.findViewById<TextView>(R.id.reviews_movie)?.text =
+            getString(R.string.reviews_string, movie.reviewsCnt)
+        view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
+
 //        view?.findViewById<ImageView>(R.id.movie_img)?.load(movie.logoUrl)
         view?.findViewById<ImageView>(R.id.movie_img)?.let {
             Glide.with(requireContext())
@@ -109,13 +117,6 @@ class FragmentMoviesDetails : Fragment() {
                 .load(movie.bgUrl)
                 .into(it)
         }
-        view?.findViewById<TextView>(R.id.movie_aging)?.text =
-            getString(R.string.aging_string, movie.aging)
-        view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
-        view?.findViewById<TextView>(R.id.genre_movie)?.text = movie.genres.joinToString { it.name }
-        view?.findViewById<TextView>(R.id.reviews_movie)?.text =
-            getString(R.string.reviews_string, movie.reviewsCnt)
-        view?.findViewById<RatingBar>(R.id.ratingBar_movie)?.rating = movie.rating
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)

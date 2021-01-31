@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">AndroidKotlin</string>
     <string name="back">Back</string>
-    <string name="movie_name">Avengers: End Game</string>
+    <string name="movie_name">Avengers:</string>
     <string name="genre_string">Action, Adventure, Fantasy</string>
     <string name="aging_string">%d+</string>
     <string name="reviews_string">%d REVIEWS</string>
     <string name="storyline">Storyline</string>
-    <string name="Story_talk">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
+    <string name="Story_talk">After the devastating events of Avengers:</string>
     <string name="cast">Cast</string>
     <string name="robert_downey_jr">Robert Downey Jr.</string>
     <string name="chris_evans">Chris Evans</string>
