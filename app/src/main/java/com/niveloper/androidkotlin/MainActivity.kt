@@ -2,13 +2,18 @@ package com.niveloper.androidkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.niveloper.androidkotlin.data.JsonLoad
+import com.niveloper.androidkotlin.data.JsonLoadRepository
 import com.niveloper.androidkotlin.datastore.MovieData
 import com.niveloper.androidkotlin.moviedetails.FragmentMoviesDetails
 import com.niveloper.androidkotlin.moviedetails.MovieDetailsBackClickListener
 import com.niveloper.androidkotlin.movielist.FragmentMoviesList
 import com.niveloper.androidkotlin.movielist.MoviesListClickListener
 
-class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsBackClickListener {
+class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsBackClickListener,
+    JsonLoadRepositoryInterface {
+    private val jsonLoadRepo = JsonLoad(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -60,4 +65,6 @@ class MainActivity : AppCompatActivity(), MoviesListClickListener, MovieDetailsB
     private fun toBack() {
         supportFragmentManager.popBackStack()
     }
+
+    override fun provideJsonLoadRepository(): JsonLoadRepository = jsonLoadRepo
 }
