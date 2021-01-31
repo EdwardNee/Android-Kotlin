@@ -70,7 +70,7 @@ class FragmentMoviesDetails : Fragment() {
      */
     private fun bindUI(view: View, movie: MovieData){
         initMovieData(movie)
-        val adapter = view.findViewById<RecyclerView>(R.id.rv_movies).adapter as AdapterMovieDetails
+        val adapter = view.findViewById<RecyclerView>(R.id.rv_actors).adapter as AdapterMovieDetails
         adapter.submitList(movie.cast)
     }
 
