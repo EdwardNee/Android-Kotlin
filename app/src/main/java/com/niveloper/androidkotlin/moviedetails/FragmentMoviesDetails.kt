@@ -98,9 +98,11 @@ class FragmentMoviesDetails : Fragment() {
     private fun initMovieData(movie: MovieData) {
         view?.findViewById<TextView>(R.id.movie_naming)?.text = movie.title
 //        view?.findViewById<ImageView>(R.id.movie_img)?.load(movie.logoUrl)
-        Glide.with(requireContext())
-            .load(movie.logoUrl)
-            .into(view?.findViewById<ImageView>(R.id.movie_img)!!)
+        view?.findViewById<ImageView>(R.id.movie_img)?.let {
+            Glide.with(requireContext())
+                .load(movie.logoUrl)
+                .into(it)
+        }
         view?.findViewById<TextView>(R.id.movie_aging)?.text =
             getString(R.string.aging_string, movie.aging)
         view?.findViewById<TextView>(R.id.storyline)?.text = movie.storyLine
