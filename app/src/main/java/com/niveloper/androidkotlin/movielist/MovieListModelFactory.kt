@@ -7,7 +7,7 @@ import java.lang.IllegalArgumentException
 
 class MovieListModelFactory(private val repo : JsonLoadRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T = when(modelClass){
-        MovieListModelFactory::class.java -> MovieListModelFactory(repo)
+        MovieListViewModel::class.java -> MovieListViewModel(repo)
         else -> throw IllegalArgumentException("$modelClass is not registered")
     } as T
 }
