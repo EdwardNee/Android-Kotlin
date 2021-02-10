@@ -65,11 +65,12 @@ class FragmentMoviesDetails : Fragment() {
 
         viewModel.loadMovies(movieId)
 
+        /* That commented for MVVM Pattern
         lifecycleScope.launch {
             val repos =
                 (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
             val movie = repos.loadMovie(movieId)
-        }
+        }*/
 
         viewModel.movie.observe()
     }
