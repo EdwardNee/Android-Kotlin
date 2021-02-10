@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,12 @@ import kotlinx.coroutines.withContext
 class FragmentMoviesList : Fragment() {
     var listener: MoviesListClickListener? = null
     var movies: List<MovieData>? = null
+
+    //Init viewModel
+    private val viewModel: MovieListViewModel by viewModels {
+        MovieListModelFactory((requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository())
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is MoviesListClickListener)
@@ -64,15 +71,20 @@ class FragmentMoviesList : Fragment() {
     /**
      * Загружает вне главного потока данные о фильме в адаптер.
      */
-    private fun loadDataToAdapter(adapter : AdapterMoviesList){
+    private fun loadDataToAdapter(adapter: AdapterMoviesList) {
         lifecycleScope.launch {
-            val repos = (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
+            viewModel.movies.observe(
+                viewLifecycleOwner,
+                { movieList -> adapter.submitList(movieList) })
+            /* commented for MVVM
+            val repos =
+                (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
             val moviesData = movies ?: repos.loadMovies()
 
             withContext(Dispatchers.Main) {
                 movies = moviesData
                 adapter.submitList(moviesData)
-            }
+            }*/
         }
     }
 }
