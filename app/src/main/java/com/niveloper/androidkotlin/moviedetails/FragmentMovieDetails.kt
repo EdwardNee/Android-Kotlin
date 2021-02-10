@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +32,12 @@ import kotlinx.coroutines.withContext
  */
 class FragmentMoviesDetails : Fragment() {
     var listener: MovieDetailsBackClickListener? = null
+
+    //Init viewModel
+    private val viewModel: MovieDetailsViewModel by viewModels {
+        MovieDetailsModelFactory((requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository())
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -55,15 +63,26 @@ class FragmentMoviesDetails : Fragment() {
             listener?.onMovieDeselected()
         }
 
+        viewModel.loadMovies(movieId)
+
         lifecycleScope.launch {
             val repos =
                 (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
             val movie = repos.loadMovie(movieId)
-
-            withContext(Dispatchers.Main) {
-                bindUI(view, movie)
-            }
         }
+
+        viewModel.movie.observe()
+    }
+
+    /**
+     * Show toast if movie not found.
+     */
+    private fun showNotFoundMovieToast() {
+        Toast.makeText(
+            requireContext(),
+            "Movie not found.",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     /**
