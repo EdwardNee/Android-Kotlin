@@ -9,8 +9,8 @@ import com.niveloper.androidkotlin.datastore.MovieData
 import kotlinx.coroutines.launch
 
 class MovieDetailsViewModel(private val repo: JsonLoadRepository) : ViewModel() {
-    private val _movie = MutableLiveData<MovieData>()
-    val movie: LiveData<MovieData> get() = _movie
+    private val _movie = MutableLiveData<MovieData?>()
+    val movie: LiveData<MovieData?> get() = _movie
 
     fun loadMovies(movieId: Int) {
         viewModelScope.launch {

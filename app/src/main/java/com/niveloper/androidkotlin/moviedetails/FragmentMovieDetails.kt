@@ -72,7 +72,9 @@ class FragmentMoviesDetails : Fragment() {
             val movie = repos.loadMovie(movieId)
         }*/
 
-        viewModel.movie.observe()
+        viewModel.movie.observe(
+            viewLifecycleOwner,
+            { movie -> movie?.let { bindUI(view, it) ?: showNotFoundMovieToast() } })
     }
 
     /**
