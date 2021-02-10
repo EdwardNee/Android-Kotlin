@@ -72,20 +72,21 @@ class FragmentMoviesList : Fragment() {
      * Загружает вне главного потока данные о фильме в адаптер.
      */
     private fun loadDataToAdapter(adapter: AdapterMoviesList) {
-        lifecycleScope.launch {
-            viewModel.movies.observe(
-                viewLifecycleOwner,
-                { movieList -> adapter.submitList(movieList) })
-            /* commented for MVVM
-            val repos =
-                (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
-            val moviesData = movies ?: repos.loadMovies()
+//        lifecycleScope.launch {
+        viewModel.movies.observe(
+            viewLifecycleOwner,
+            { movieList -> adapter.submitList(movieList) })
 
-            withContext(Dispatchers.Main) {
-                movies = moviesData
-                adapter.submitList(moviesData)
-            }*/
-        }
+        /* commented for MVVM
+        val repos =
+            (requireActivity() as JsonLoadRepositoryInterface).provideJsonLoadRepository()
+        val moviesData = movies ?: repos.loadMovies()
+
+        withContext(Dispatchers.Main) {
+            movies = moviesData
+            adapter.submitList(moviesData)
+        }*/
+//        }
     }
 }
 
