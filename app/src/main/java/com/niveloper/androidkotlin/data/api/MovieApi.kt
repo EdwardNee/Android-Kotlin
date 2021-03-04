@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-private interface MovieApi {
+interface MovieApi {
     @GET("configuration")
     suspend fun loadConfiguration(): ConfigurationResponse
 
@@ -24,5 +24,5 @@ private interface MovieApi {
 
     suspend fun loadUpComing(
         @Query("page") page: Int
-    ) : UpComingResponse
+    ): UpComingResponse
 }
