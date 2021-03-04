@@ -1,9 +1,9 @@
 package com.niveloper.androidkotlin.data.api
 
-import com.niveloper.androidkotlin.datastore.MovieData
+import com.niveloper.androidkotlin.data.api.response.ConfigurationResponse
 import retrofit2.http.GET
 
-@GET()
 private interface MovieApi {
-    suspend fun loadMovies(): List<MovieData>
+    @GET("configuration")
+    suspend fun loadConfiguration() : ConfigurationResponse
 }
