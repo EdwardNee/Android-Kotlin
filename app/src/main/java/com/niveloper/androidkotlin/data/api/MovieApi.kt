@@ -1,11 +1,9 @@
 package com.niveloper.androidkotlin.data.api
 
-import com.niveloper.androidkotlin.data.api.response.ConfigurationResponse
-import com.niveloper.androidkotlin.data.api.response.GenresResponse
-import com.niveloper.androidkotlin.data.api.response.MovieCastResponse
-import com.niveloper.androidkotlin.data.api.response.MovieDetailsResponse
+import com.niveloper.androidkotlin.data.api.response.*
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 private interface MovieApi {
     @GET("configuration")
@@ -23,4 +21,8 @@ private interface MovieApi {
     suspend fun loadCast(
         @Path("movie_id") movieId: Int
     ): MovieCastResponse
+
+    suspend fun loadUpComing(
+        @Query("page") page: Int
+    ) : UpComingResponse
 }
